@@ -1,0 +1,104 @@
+* {
+    margin: 0; padding: 0; border: 0;
+    box-sizing: border-box;
+    font-size: 62.5%;
+} /* Reset Rule */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #FFF;
+    color: #FFF;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.aboutContainer {
+    width: 100%; height: auto;
+    margin: 120px auto 0 auto;
+}
+
+.aboutImgContainer {
+    width: 60%; height: 60%;
+    position: relative;
+    margin: 0 auto;
+}
+
+.aboutImgContainer > a {
+    display: block;
+    width: 100%; height: 100%;
+}
+
+.aboutImgContainer > a > img {
+    width: 100%; height: 100%;
+    filter: brightness(40%);
+    border-radius: 8px;
+}
+
+.aboutImgContainer > a > p {
+    position: absolute;
+    top: 50%; left: 50%;
+    font-size: 8rem;
+    font-weight: bold;
+    text-align: center;
+    white-space: nowrap;
+    color: white;
+    transform: translate(-50%, -50%);
+}
+
+.aboutHeaderContainer {
+    width: 70%; height: auto;
+    margin: 0 auto;
+}
+
+.aboutHeaderContainer > h1 {
+    color: black;
+}
+
+.aboutpContentContainer {
+    width: 90%; height: auto;
+    margin: 0 auto;
+}
+
+.aboutpContentContainer > p {
+    color: black;
+    line-height: 1.5;
+    margin-top: 24px;
+}
+
+.divider {
+    width: 100%; height: 50px;
+    margin: 24px 0;
+    background-color: #60aef8;
+}
+
+.footerContainer > p > a {
+    font-size: 2rem;
+}
+
+@media (min-width: 2560px) {
+    .aboutHeaderContainer > h1 {
+        font-size: 4.4rem;
+    }
+
+    .aboutpContentContainer > p {
+        font-size: 2.8rem
+    }
+}
+
+@media (max-width: 1920px) {
+
+}
+
+@media (max-width: 1440px) {
+
+}
+
+@media (max-width: 1280px) {
+
+}
+
+@media (max-width: 480px) {
+
+}

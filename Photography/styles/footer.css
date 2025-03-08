@@ -1,0 +1,253 @@
+:root {
+    --ps-footer-primary-text-color: white;
+    --ps-footer-background-color: #222;
+    --ps-secondary-color: #fdd04f;
+}
+
+.light-mode {
+    --ps-footer-primary-text-color: black;
+    --ps-footer-background-color: white;
+}
+
+.footerContainer {
+    width: 100%; height: auto;
+    border-top: 2px solid #666;
+    padding: 40px 0 20px 0;
+    color: var(--ps-footer-primary-text-color);
+    background-color: var(--ps-footer-background-color);
+}
+
+.footerContentContainer {
+    width: 60%; max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.footerContentContainer a {
+    text-decoration: none;
+}
+
+.footerTopBox, .footerMidBox, .footerBotBox {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.footerTopBox {
+    padding-bottom: 24px;
+    border-bottom: 2px solid #555;
+}
+
+.footerTopBox > .footerLogo {
+    width: 150px; height: auto;
+}
+
+.footerTopBox > .footerLogo > a {
+    display: block;
+    width: 80px; height: 80px;
+}
+
+.footerTopBox > .footerLogo > a:hover {
+    cursor: pointer;
+}
+
+.footerTopBox > .footerLogo > a:hover > img {
+    filter: brightness(1.25);
+}
+
+.footerTopBox > .footerLogo > a > img {
+    max-width: 80px; max-height: 80px;
+    transition: filter 150ms ease-in-out;
+    border-radius: 30px;
+}
+
+.footerTopBox > .footerBackTop > p > a {
+    font-size: 2rem;
+    text-decoration: none;
+    transition: color 300ms ease-in-out;
+}
+
+.footerTopBox > .footerBackTop > p > a:hover {
+    cursor: pointer;
+    text-decoration: underline;
+    color: var(--ps-secondary-color);
+}
+
+.footerTopBox > .footerContactButton {
+    width: 150px; height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footerTopBox > .footerContactButton > a {
+    width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footerTopBox > .footerContactButton > a > p {
+    font-size: 2rem;
+    padding: 18px;
+    border-radius: 45px;
+    background-color: var(--ps-footer-primary-text-color);
+    color: var(--ps-footer-background-color);
+    transition: background-color 300ms ease-in-out;
+}
+
+.footerTopBox > .footerContactButton > a > p:hover {
+    background-color: var(--ps-secondary-color);
+}
+
+.footerMidBox {
+    width: 95%;
+    margin: 0 auto;
+    padding: 36px 0;
+    line-height: 1.5;
+}
+
+.footerMidBoxInner {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footerMidBoxInner > p {
+    font-weight: bold;
+    font-size: 1.6rem;
+    padding-bottom: 18px;
+}
+
+.footerMidBoxInner > a {
+    font-size: 1.8rem;
+    color: var(--ps-footer-primary-text-color);
+    transition: color 300ms ease-in-out;
+}
+
+.footerMidBoxInner > a:hover {
+    color: var(--ps-secondary-color);
+}
+
+.footerBotBox {
+    align-items: end;
+    border-top: 2px solid #555;
+    padding-top: 24px;
+}
+
+.footerBotBox > p {
+    font-size: 2rem;
+}
+
+.footerSocialMedia {
+    display: flex;
+    flex-direction: row;
+    gap: 6px;
+}
+
+.footerSocialMedia > a {
+    width: 50px; height: 50px
+}
+
+.footerSocialMedia > a > svg {
+    width: 100%; height: 100%;
+}
+
+#facebook, .instagram-path, #tiktok, #youtube {
+    transition: color 300ms ease-in-out, opacity 300ms ease-in-out;
+    color: var(--ps-footer-primary-text-color);
+}
+
+#facebook:hover {
+    color: #0866ff;
+}
+
+.instagram-path.gradient {
+    opacity: 0;
+}
+
+#instagram:hover .instagram-path.gradient {
+    opacity: 1;
+}
+
+#instagram:hover .instagram-path.white {
+    opacity: 0;
+}
+
+#tiktok:hover {
+    color: #111;
+}
+
+#youtube:hover {
+    color: #ff0033;
+}
+
+@media (min-width: 2560px) {
+
+}
+
+@media (max-width: 1920px) {
+
+}
+
+@media (max-width: 1440px) {
+    .footerContentContainer {
+        width: 80%;
+    }
+}
+
+@media (max-width: 1280px) {
+
+}
+
+
+@media (max-width: 480px) {
+    .footerContentContainer {
+        width: 95%;
+    }
+    
+    .footerTopBox {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 24px;
+    }
+
+    .footerBackTop {
+        order: 1;
+    }
+
+    .footerTopBox > .footerLogo {
+        order: 2;
+        width: 120px;
+    }
+
+    .footerTopBox > .footerLogo > a {
+        width: 120px; height: 120px;
+    }
+
+    .footerTopBox > .footerLogo > a > img {
+        max-width: 120px; max-height: 120px;
+    }
+
+    .footerTopBox > .footerContactButton {
+        order: 3;
+    }
+
+    .footerBotBox {
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+    }
+
+    .copyright {
+        order: 2;
+        text-align: center;
+    }
+
+    .footerSocialMedia {
+        order: 1;
+    }
+}

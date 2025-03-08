@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Austin Augard - Home Page</title>
+        <link rel="stylesheet" href="styles/index.css">
+        <link rel="stylesheet" href="styles/home.css">
+    </head>
+    <body>
+        <div class="pictureOfMe">
+            <a href="https://youtu.be/dQw4w9WgXcQ" target="_blank"><img id="image" src="images/PictureOfMe.png" alt=""></a>
+        </div>
+        <h1 id="name">Austin Augard | CIS 295 Web Development II</h1>
+        <nav class="navMenuContainer">
+            <ul>
+                <li class="navMenuItem">
+                    <h1>Businesses</h1>
+                    <div class="navDropdown">
+                        <ul>
+                            <li><a href="Photography/index">Photography Studio</a></li>
+                            <li><a href="Fitness/index">Fitness Trainer/Coach</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="navMenuItem">
+                    <h1>Portfolio</h1>
+                    <div class="navDropdown">
+                        <ul>
+                            <li><a href="Portfolio/index.html">Home Page</a></li>
+                            <li><a href="Portfolio/mimic_mega_menu.html">Mega Menu Mimc</a></li>
+                        </ul>
+                    </div>
+                </li> 
+                <li class="navMenuItem">
+                    <h1>Demos</h1>
+                    <div class="navDropdown">
+                        <ul>
+                            <li><a href="Demos/selectors.html">CSS Selectors</a></li>
+                            <li><a href="Demos/hamburger.html">Hamburger Animations</a></li>
+                            <li><a href="Demos/mega_menu.html">Mega Menu</a></li>
+                        </ul>
+                    </div>
+                </li> 
+                <li class="navMenuItem">
+                    <h1>Week 1</h1>
+                    <div class="navDropdown">
+                        <ul>
+                            <li><a href="images/Wheel.png">Participation</a></li>
+                            <li><a href="">Assignment</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="navMenuItem">
+                    <h1>Week 2</h1>
+                    <div class="navDropdown">
+                        <ul>
+                            <li><a href="Demos/selectors.html">Participation</a></li>
+                            <li><a href="">Assignment</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="navMenuItem">
+                    <h1>Week 3</h1>
+                    <div class="navDropdown">
+                        <ul>
+                            <li><a href="UsabilityChecklist.pdf">Participation</a></li>
+                            <li><a href="Demos/hamburger.html">Assignment</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="navMenuItem">
+                    <h1>Week 4</h1>
+                    <div class="navDropdown">
+                        <ul>
+                            <li><a href="Portfolio/index.html">Participation</a></li>
+                            <li><a href="">Assignment</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="navMenuItem">
+                    <h1>Usability Checklist</h1>
+                    <div class="navDropdown">
+                        <ul>
+                            <li><a href="UsabilityChecklist.pdf" download>Download</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        <script>
+            const image = document.getElementById('image');
+            image.addEventListener('mouseover', function() {
+                image.src = "images/Bruni.png";
+            });
+            image.addEventListener('mouseout', function() {
+                image.src = "images/PictureOfMe.png";
+            });
+        </script>
+    </body>
+</html>

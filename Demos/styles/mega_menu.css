@@ -1,0 +1,84 @@
+* {
+    font-size: 62.5%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.navContainer {
+    width: 100%; height: auto;
+    background-color: #222;
+    display: flex;
+    align-items: center;
+
+}
+
+.navContainer > a {
+    font-size: 2rem;
+    color: white;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+}
+
+.navDropdown > p {
+    font-size: 2rem;
+    color: white;
+    text-align: center;
+    padding: 13px 16px;
+    cursor: default;
+}
+
+.navContainer > a:hover, .navContainer > .navDropdown:hover > p {
+    background-color: red;
+}
+
+.navDropdown:hover .navDropdownExpand {
+    display: block;
+}
+
+.navDropdownExpand {
+    display: none;
+    position: absolute;
+    left: 0; width: 100%;
+    background-color: #AAA;
+}
+
+.navDropdownHeaderContainer {
+    background-color: red;
+}
+
+.navDropdownHeader {
+    font-size: 3rem;
+    padding: 16px;
+    color: white;
+}
+
+.navDropdownContent {
+    width: 100%; height: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.navDropdownBoxes {
+    display: flex;
+    align-items: start;
+    justify-items: center;
+    flex-direction: column;
+}
+
+.navDropdownBoxes > p {
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 16px 12px;
+}
+
+.navDropdownBoxes > a {
+    text-decoration: none;
+    display: block; width: 100%;
+    font-size: 1.6rem;
+    padding: 16px;
+    color: black;
+}
+
+.navDropdownBoxes > a:hover {
+    background-color: #DDD;
+}

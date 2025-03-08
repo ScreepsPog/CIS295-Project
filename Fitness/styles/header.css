@@ -1,0 +1,301 @@
+/*
+
+=====================================
+
+                Scroll Bar
+
+=====================================
+
+*/
+
+::-webkit-scrollbar {
+    width: 15px;
+}
+  
+/* Track */
+::-webkit-scrollbar-track {
+    background: #444; 
+}
+   
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888; 
+    border-radius: 15px;
+}
+  
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #AAA; 
+}
+
+/*
+
+::-webkit-scrollbar-button:single-button {
+    background: #444;
+}
+
+::-webkit-scrollbar-button:single-button:hover {
+    background: #666;
+}
+
+*/
+
+
+/*
+
+=====================================
+
+                Header
+
+=====================================
+
+*/
+
+.headerContainer {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    z-index: 10;
+    width: 100%; height: 100px;
+    margin: 0 auto;
+    background-color: rgba(68, 68, 68, .7);
+}
+
+.headerContentContainer {
+    width: 100%; height: 100px;
+    margin: 0 auto;
+    display: flex;
+}
+
+/*
+
+=====================================
+
+                Logo
+
+=====================================
+
+*/
+
+.logoContainer {
+    width: 90px;
+    margin-left: 50px;
+    max-height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.logoContainer > a {
+    text-decoration: none;
+    color: white;
+    transition: color 500ms ease-in-out;
+}
+
+.logoContainer > a:hover {
+    color: #0A76DB;
+}
+
+.logoContainer > a:hover img {
+    filter: brightness(1.25);
+}
+
+.logoContainer > a > img {
+    width: 100%; height: 100%;
+    transition: filter 150ms ease-in-out;
+}
+
+/*
+
+=====================================
+
+            Navigation
+
+=====================================
+
+*/
+
+.navContainer {
+    margin-left: auto;
+    margin-right: 50px;
+}
+
+.navContainer > ul {
+    display: flex;
+    justify-content: right;
+    gap: 10px;
+    list-style: none;
+    margin-top: 24px;
+}
+
+.navContainer ul li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%; height: 100%;
+    padding: 16px;
+    background-color: transparent;
+    border-radius: 6px;
+    font-size: 2rem;
+    color: white;
+    text-decoration: none;
+    transition: background-color 150ms ease-in-out
+}
+
+.navContainer ul li a:hover {
+    background-color: #0A76DB;
+}
+
+@media(max-width: 480px) {
+    .returnHomeButton {
+        display: none;
+    }
+    
+    .headerDesktop {
+        display: none;
+    }
+    
+    .headerContainer {
+        position: sticky;
+        top: -1px;
+        background-color: #0A76DB;
+        border-bottom: 2px solid transparent;
+        transition: border 500ms ease-in-out;
+    }
+    
+    .headerMobile {
+        width: 100%; height: 100%;
+        display: flex;
+        position: relative;
+    }
+    
+    .navHamburger {
+        position: absolute;
+        top: 35px; left: 25px;
+    }
+    
+    .logoContainer {
+        width: 100%; height: 100px;
+        margin-left: 0px;
+    }
+    
+    .logoContainer > a > img {
+        max-width: 80px;
+    }
+
+    #button1 {
+        width: 30px; height: 35px;
+        background-color: #ffffff00;
+        overflow: hidden;
+        position: relative;
+    }
+    
+    .navHIcons {
+        width: 30px; height: 4px;
+        background-color: white;
+        position: absolute;
+        transition: all 750ms ease-in-out;
+    }
+    
+    .menuClosed .navIcon1 {
+        top: 0px; left: 0px;
+    }
+    
+    .menuClosed .navIcon2 {
+        top: 12.5px; left: 0px;
+    }
+    
+    .menuClosed .navIcon3 {
+        top: 25px; left: 0px;
+    }
+    
+    .menuClosed .navIcon4 {
+        opacity: 0;
+        transform: rotate(45deg);
+        top: 11px; left: 59px;
+    }
+    
+    .menuClosed .navIcon5 {
+        opacity: 0;
+        transform: rotate(-45deg);
+        top: 11px; left: 59px;
+    }
+    
+    .menuOpened .navIcon1 {
+        top: 0px; left: -90px;
+    }
+    
+    .menuOpened .navIcon2 {
+        top: 12.5px; left: -65px;
+    }
+    
+    .menuOpened .navIcon3 {
+        top: 25px; left: -40px;
+    }
+    
+    .menuOpened .navIcon4 {
+        opacity: 1;
+        top: 11px; left: -1px;
+        transform: rotate(45deg);
+    }
+    
+    .menuOpened .navIcon5 {
+        opacity: 1;
+        top: 11px; left: -1px;
+        transform: rotate(-45deg);
+    }
+    
+    .navExpandContainer {
+        position: absolute;
+        top: 100px;
+        display: none;
+        opacity: 0;
+        width: 100%; height: auto;
+        background-color: #0A76DB;
+        transition: all 500ms ease-in-out;
+    }
+    
+    .navListContent ul {
+        list-style: none;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+    
+    .navListContent li {
+        width: 100%; height: 75px;
+        border-bottom: 2px solid #f3a562;
+    }
+    
+    .navListContent li a {
+        width: 100%; height: 100%;
+        padding-left: 10px;
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: white;
+        font-size: 2.4rem;
+    }
+}
+
+@media(min-width: 481px) AND (max-width: 768px) {
+    .headerMobile {
+        display: none;
+    }
+
+    .navContainer {
+        margin: 0 0;
+    }
+}
+
+@media(min-width: 769px) AND (max-width: 1023px) {
+    .headerMobile {
+        display: none;
+    }
+}
+
+@media(min-width: 1024px) {
+    .headerMobile {
+        display: none;
+    }
+}

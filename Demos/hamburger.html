@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Hamburger Menu Animations</title>
+        <link rel="stylesheet" href="styles/hamburger.css">
+        <link rel="stylesheet" href="styles/demo.css">
+        <link rel="stylesheet" href="../styles/home.css">
+    </head>
+    <body>
+        <div class="returnHomeButton">
+            <a href="../index.html"><img src="../images/home.png" alt=""></a>
+        </div>
+        <div class="bodyContainer">
+            <div class="headerContainer">
+                <h1>Hamburger Menu Animations</h1>
+            </div>
+            <div class="demoEx1Container">
+                <h2>Demonstration 1</h2>
+                <div class="demoEx1">
+                    <h2>1a</h2>
+                    <button class="menu1aClosed" id="button1a">
+                        Menu is hidden <br> (click to open)
+                    </button>
+                </div>
+                <div class="demoEx1">
+                    <h2>1b</h2>
+                    <button class="menu1bClosed" id="button1b">
+                        <img src="images/Menu.svg" alt="">
+                    </button>
+                </div>
+                <div class="demoEx1">
+                    <h2>1c</h2>
+                    <button class="menu1cClosed" id="button1c">
+                        <div class="b1c1"></div>
+                        <div class="b1c2"></div>
+                        <div class="b1c3"></div>
+                    </button>
+                </div>
+            </div>
+            <div class="demoAllContainer">
+                <div class="demoContainer">
+                    <h2>Demonstration 2</h2>
+                    <button class="menu2Closed" id="button2">
+                        <div class="b2a1"></div>
+                        <div class="b2a2"></div>
+                        <div class="b2a3"></div>
+                        <div class="b2a4"></div>
+                        <div class="b2a5"></div>
+                    </button>
+                </div>
+                <div class="demoContainer">
+                    <h2>Demonstration 3</h2>
+                    <button class="menu3Closed" id="button3">
+                        <div class="b3a1"></div>
+                        <div class="b3a2"></div>
+                        <div class="b3a3"></div>
+                        <div class="b3a4"></div>
+                        <div class="b3a5"></div>
+                    </button>
+                </div>
+                <div class="demoContainer">
+                    <h2>Demonstration 4</h2>
+                    <button class="menu4Closed" id="button4">
+                        <div class="b4a1"></div>
+                        <div class="b4a2"></div>
+                        <div class="b4a3"></div>
+                        <div class="b4a4"></div>
+                        <div class="b4a5"></div>
+                    </button>
+                </div>
+                <div class="demoContainer">
+                    <h2>Demonstration 5</h2>
+                    <button class="menu5Closed" id="button5">
+                        <div class="b5a1"></div>
+                        <div class="b5a2"></div>
+                        <div class="b5a3"></div>
+                        <div class="b5a4"></div>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <script>
+            document.getElementById("button1a").addEventListener("click", () => {
+                const button1a = document.getElementById("button1a");
+                if (button1a.getAttribute("class") == "menu1aClosed") {
+                    button1a.setAttribute("class", "menu1aOpened");
+                    button1a.innerHTML = "Menu is displayed <br> (click to close)";
+                } else {
+                    button1a.setAttribute("class", "menu1aClosed");
+                    button1a.innerHTML = "Menu is hidden <br> (click to open)";
+                }
+            });
+            
+            document.getElementById("button1b").addEventListener("click", () => {
+                const button1b = document.getElementById("button1b");
+                if(button1b.getAttribute("class") == "menu1bClosed") {
+                    button1b.setAttribute("class", "menu1bOpened");
+                    button1b.innerHTML = '<img src="images/Close.svg" alt=""></button>';
+                } else {
+                    button1b.setAttribute("class", "menu1bClosed");
+                    button1b.innerHTML = '<img src="images/Menu.svg" alt=""></button>';
+                }
+            });
+
+            document.getElementById("button1c").addEventListener("click", () => {
+                const button1c = document.getElementById("button1c");
+                if(button1c.getAttribute("class") == "menu1cClosed") {
+                    button1c.setAttribute("class", "menu1cOpened");
+
+                } else {
+                    button1c.setAttribute("class", "menu1cClosed");
+                }
+            });
+
+            document.getElementById("button2").addEventListener("click", () => {
+                const button2 = document.getElementById("button2");
+                if(button2.getAttribute("class") == "menu2Closed") {
+                    button2.setAttribute("class", "menu2Opened");
+
+                } else {
+                    button2.setAttribute("class", "menu2Closed");
+                }
+            });
+
+            document.getElementById("button3").addEventListener("click", () => {
+                const button3 = document.getElementById("button3");
+                if(button3.getAttribute("class") == "menu3Closed") {
+                    button3.setAttribute("class", "menu3Opened");
+
+                } else {
+                    button3.setAttribute("class", "menu3Closed");
+                }
+            });
+
+            document.getElementById("button4").addEventListener("click", () => {
+                const button4 = document.getElementById("button4");
+                if(button4.getAttribute("class") == "menu4Closed") {
+                    button4.setAttribute("class", "menu4Opened");
+
+                } else {
+                    button4.setAttribute("class", "menu4Closed");
+                }
+            });
+
+            document.getElementById("button5").addEventListener("click", () => {
+                const button5 = document.getElementById("button5");
+                if(button5.getAttribute("class") == "menu5Closed") {
+                    button5.setAttribute("class", "menu5Opened");
+
+                } else {
+                    button5.setAttribute("class", "menu5Closed");
+                }
+            });
+        </script>
+    </body>
+</html>

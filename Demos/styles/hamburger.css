@@ -1,0 +1,372 @@
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+button {
+    margin: 48px auto;
+    display: block;
+    background-color: transparent;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.headerContainer {
+    width: 100%; height: auto;
+}
+
+.headerContainer > h1 {
+    text-align: center;
+    padding: 8px;
+    background-image: linear-gradient(111deg, #60aef8, #f46692, #f3a562, #f46692, #60aef8, #f46692, #f3a562);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    animation: gradientAnimation 12s linear infinite;
+    background-size: 300% 100%;
+    background-clip: text;
+    font-size: 48px;
+}
+
+@keyframes gradientAnimation{
+    0% {
+        background-position: 0;
+    }
+    to {
+        background-position: 100%;
+    }
+}
+
+.demoEx1Container {
+    width: 95%; height: 300px;
+    border: 2px solid black;
+    margin: 48px auto;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    position: relative;
+}
+
+.demoEx1 {
+    flex: 1 0 30%;
+    min-height: 160px;
+    margin: 48px 24px 24px 24px;
+    border: 2px solid black;
+}
+
+#button1c {
+    position: relative;
+    width: 75px; height: 75px;
+    overflow: hidden;
+}
+
+.menu1cClosed .b1c1, .menu1cClosed .b1c2, .menu1cClosed .b1c3 {
+    position: absolute;
+    width: 50px; height: 10px;
+    background-color: #222;
+}
+
+.b1c1, .b1c2, .b1c3 {
+    transition: all .6s ease-in-out;
+}
+
+.menu1cClosed  .b1c1 {
+    left: 10px; top: 10px;
+}
+
+.menu1cClosed  .b1c2 {
+    left: 10px; top: 30px;
+}
+
+.menu1cClosed .b1c3 {
+    left: 10px; top: 50px;
+}
+
+.menu1cOpened .b1c1, .menu1cOpened .b1c2, .menu1cOpened .b1c3 {
+    position: absolute;
+    width: 50px; height: 10px;
+    background-color: #222;
+}
+
+.menu1cOpened .b1c1 {
+    left: 10px; top: 30px;
+    transform: rotate(225deg);
+}
+
+.menu1cOpened .b1c2 {
+    opacity: 0;
+    left: -100px; top: 30px;
+}
+
+.menu1cOpened .b1c3 {
+    left: 10px; top: 30px;
+    transform: rotate(-225deg);
+}
+
+.demoAllContainer {
+    width: 95%; height: auto;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+}
+
+.demoContainer {
+    height: 300px;
+    border: 2px solid black;
+    position: relative;
+    margin-bottom: 24px;
+}
+
+.demoContainer > h2, .demoEx1Container > h2 {
+    position: absolute;
+    font-family: monospace;
+    color: powderblue;
+    background-color: black;
+    padding: 12px;
+    letter-spacing: 4px;
+    top: -28px; left: 112px;
+}
+
+/* */
+
+#button2, #button3, #button4, #button5 {
+    position: relative;
+    width: 60px; height: 50px;
+    overflow: hidden;
+}
+
+#button2 > div, #button3 > div, #button4 > div {
+    position: absolute;
+    width: 50px; height: 8px;
+    background-color: #222;
+    transition: all 750ms ease-in-out;
+}
+
+.menu2Closed .b2a1 {
+    top: 5px; left: 5px;
+}
+
+.menu2Closed .b2a2 {
+    top: 20px; left: 5px;
+}
+
+.menu2Closed .b2a3 {
+    top: 35px; left: 5px;
+}
+
+.menu2Closed .b2a4 {
+    top: 20px; left: 80px;
+    transform: rotate(45deg)
+}
+
+.menu2Closed .b2a5 {
+    top: 20px; left: 80px;
+    transform: rotate(-45deg)
+}
+
+.menu2Closed .b2a4, .menu2Closed .b2a5 {
+    opacity: 0.5;
+}
+
+.menu2Opened .b2a1, .menu2Opened .b2a2, .menu2Opened .b2a3 {
+    opacity: 0;
+}
+
+.menu2Opened .b2a1 {
+    top: 5px; left: -120px;
+}
+
+.menu2Opened .b2a2 {
+    top: 20px; left: -95px;
+}
+
+.menu2Opened .b2a3 {
+    top: 35px; left: -70px;
+}
+
+.menu2Opened .b2a4 {
+    opacity: 1;
+    top: 20px; left: 5px;
+    transform: rotate(45deg)
+}
+
+.menu2Opened .b2a5 {
+    opacity: 1;
+    top: 20px; left: 5px;
+    transform: rotate(-45deg)
+}
+
+/* */
+
+.menu3Closed .b3a1 {
+    top: 5px; left: 5px;
+}
+
+.menu3Closed .b3a2 {
+    top: 20px; left: 5px;
+}
+
+.menu3Closed .b3a3 {
+    top: 35px; left: 5px;
+}
+
+.menu3Closed .b3a4 {
+    opacity: 0;
+    top: -70px; left: 25px;
+    transform: rotate(-45deg)
+}
+
+.menu3Closed .b3a5 {
+    opacity: 0;
+    top: -70px; left: -25px;
+    transform: rotate(45deg)
+}
+
+.menu3Opened .b3a1 {
+    opacity: 0;
+    top: 105px; left: 5px;
+}
+
+.menu3Opened .b3a2 {
+    opacity: 0;
+    top: 205px; left: 5px;
+}
+
+.menu3Opened .b3a3 {
+    opacity: 0;
+    top: 305px; left: 5px;
+}
+
+.menu3Opened .b3a4 {
+    opacity: 1;
+    top: 20px; left: 5px;
+    transform: rotate(-45deg)
+}
+
+.menu3Opened .b3a5 {
+    opacity: 1;
+    top: 20px; left: 5px;
+    transform: rotate(45deg)
+}
+
+/* */
+
+.menu4Closed .b4a1 {
+    top: 5px; left: 5px;
+}
+
+.menu4Closed .b4a2 {
+    top: 20px; left: 5px;
+}
+
+.menu4Closed .b4a3 {
+    top: 35px; left: 5px;
+}
+
+.menu4Closed .b4a4 {
+    opacity: 0;
+    top: 20px; left: 80px;
+    transform: rotate(45deg)
+}
+
+.menu4Closed .b4a5 {
+    opacity: 0;
+    top: 20px; left: 80px;
+    transform: rotate(-45deg)
+}
+
+.menu4Opened .b4a1 {
+    opacity: 0;
+    top: -55px; left: 5px;
+}
+
+.menu4Opened .b4a2 {
+    opacity: 0;
+    top: 20px; left: -145px;
+}
+
+.menu4Opened .b4a3 {
+    opacity: 0;
+    top: 85px; left: 5px;
+}
+
+.menu4Opened .b4a4 {
+    opacity: 1;
+    top: 20px; left: 5px;
+    transform: rotate(225deg)
+}
+
+.menu4Opened .b4a5 {
+    opacity: 1;
+    top: 20px; left: 5px;
+    transform: rotate(135deg)
+}
+
+/* */
+
+#button5 > div {
+    position: absolute;
+    width: 50px; height: 8px;
+    background-color: #222;
+    transition: all 750ms ease-in-out;
+}
+
+.b5a1, .b5a2, .b5a3, .b5a4, .b5a5 {
+    background-image: linear-gradient(111deg, #60aef8, #f46692, #f3a562, #f46692, #60aef8, #f46692, #f3a562);
+    animation: gradientAnimation 8s linear infinite;
+    background-size: 300% 100%;
+}
+
+.menu5Closed .b5a1 {
+    top: 5px; left: 5px;
+}
+
+.menu5Closed .b5a2 {
+    top: 20px; left: 5px;
+}
+
+.menu5Closed .b5a3 {
+    top: 35px; left: 5px;
+}
+
+.menu5Closed .b5a4 {
+    opacity: 0;
+    top: 20px; left: -80px;
+    transform: rotate(-90deg)
+}
+
+.menu5Closed .b5a5 {
+    opacity: 0;
+    top: 20px; left: 80px;
+    transform: rotate(45deg)
+}
+
+.menu5Opened .b5a1 {
+    opacity: 0;
+    top: -55px; left: 5px;
+    transform: rotate(-45deg);
+}
+
+.menu5Opened .b5a2 {
+    top: 20px; left: 5px;
+    transform: rotate(135deg);
+}
+
+.menu5Opened .b5a3 {
+    opacity: 0;
+    top: 85px; left: 5px;
+    transform: rotate(45deg);
+}
+
+.menu5Opened .b5a4 {
+    opacity: 1;
+    top: 20px; left: 5px;
+    transform: rotate(225deg)
+}
+
+.menu5Opened .b5a5 {
+    opacity: 1;
+    top: 20px; left: 5px;
+    transform: rotate(225deg)
+}

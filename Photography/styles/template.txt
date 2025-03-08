@@ -1,0 +1,45 @@
+* {
+    margin: 0; padding: 0; border: 0;
+    box-sizing: border-box;
+    font-size: 62.5%;
+} /* Reset Rule */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #222;
+    color: #FFF;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.divider {
+    width: 100%; height: 50px;
+    margin: 24px 0;
+    background-color: white;
+}
+
+.footerContainer > p > a {
+    font-size: 2rem;
+}
+
+@media (min-width: 2560px) {
+
+}
+
+@media (max-width: 1920px) {
+
+}
+
+@media (max-width: 1440px) {
+
+}
+
+@media (max-width: 1280px) {
+
+}
+
+@media (max-width: 480px) {
+
+}

@@ -1,0 +1,1097 @@
+* {
+    margin: 0; padding: 0; border: 0;
+    box-sizing: border-box;
+    font-size: 62.5%;
+} /* Reset Rule */
+
+:root {
+    --customer-photo-size: 70px;
+    --customer-photo-dWidth: 100px;
+    --customer-photo-dHeight: 100px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #FFF;
+    color: #FFF;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/*
+
+=====================================
+
+                Header
+
+=====================================
+
+*/
+
+/* Can be found at styles/header.css. Includes logo and nav. */
+
+/*
+
+=====================================
+
+            Hero Image
+
+=====================================
+
+*/
+
+
+.heroImageContainer {
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.heroImageContent {
+    position: absolute;
+    width: 100%; height: 100%;
+    transform: scaleX(-1);
+}
+
+.heroImageOverlay {
+    position: absolute;
+    top: 27.5%; 
+    right: 5%;
+    padding: 20px;
+    text-align: right;
+}
+
+.heroImageOverlay > h1 {
+    background-image: linear-gradient(111deg, #60aef8, #f46692, #f3a562, #f46692, #60aef8, #f46692, #f3a562);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    animation: gradientAnimation 12s linear infinite;
+    background-size: 300% 100%;
+    background-clip: text;
+    font-weight: bold;
+    transform: skew(-20deg);
+    transform-origin: bottom left;
+}
+
+@keyframes gradientAnimation{
+    0% {
+        background-position: 0% 0%;
+    }
+    to {
+        background-position: 100% 0%;
+    }
+}
+
+/*
+
+=====================================
+
+            Header CTA Button
+
+=====================================
+
+*/
+
+.headerCTAButton {
+    position: absolute;
+    bottom: 15%; 
+    left: 50%;
+    transform: translateX(-50%) scaleX(-1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.headerCTAButton > a {
+    text-decoration: none;
+    color: white;
+    white-space: nowrap;
+    background-color: #0A76DB;
+    padding: 32px;
+    text-transform: uppercase;
+    border-radius: 45px;
+    transition: background-color 150ms ease-in-out;
+}
+
+.headerCTAButton > a:hover {
+    background-color: #185b99;
+}
+
+/*
+
+=====================================
+
+        Header/Coaching Divider
+
+=====================================
+
+*/
+
+.coachingDivider {
+    width: 100%; height: 50px;
+    background-color: #0A76DB;
+}
+
+/*
+
+=====================================
+
+        Coaching Intro Header
+
+=====================================
+
+*/
+
+.contentHeaderContainer {
+    width: 100%; height: 350px; max-height: 350px;
+    margin: 0 auto;
+}
+
+.contentHeaderOverlay {
+    width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, .5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contentHeaderOverlay > h2 {
+    text-align: center;
+    font-weight: normal;
+}
+
+/*
+
+=====================================
+
+        Coaching Intro Content
+
+=====================================
+
+*/
+
+.coachingContentContainer {
+    width: 60%; max-width: 1200px;
+    margin: 50px auto;
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+}
+
+.coachingContent {
+    width: 65%; height: 100%; min-width: 65%;
+    background-color: #f3f3f3;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+}
+
+.coachingContent > p {
+    line-height: 1.5;
+    padding: 12px;
+    color: black;
+}
+
+.coachingPrograms {
+    width: 100%; height: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+}
+
+.coachingProgramBox {
+    width: 100%; height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    background-color: #f3f3f3;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+}
+
+.coachingProgramBox > h3 {
+    color: black;
+    text-align: center;
+    font-weight: normal;
+}
+
+/*
+
+=====================================
+
+        Coaching Info Intro
+
+=====================================
+
+*/
+
+.coachIntroContainer {
+    width: 60%; height: 200px; max-width: 1200px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+    margin: 0 auto;
+}
+
+.coachIntroOverlay {
+    width: 100%; height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.coachIntroOverlay h2 {
+    color: black;
+    text-align: center;
+    font-weight: normal;
+}
+
+/*
+
+=====================================
+
+        Coach Info Cards
+
+=====================================
+
+*/
+
+/* Coach cards can be viewed @ styles/coachCard.css */
+
+/*
+
+=====================================
+
+            Customer Header
+
+=====================================
+
+*/
+
+.customerHeaderContainer {
+    width: 60%; height: auto; max-width: 1200px;
+    margin: 48px auto 36px auto;
+}
+
+.customerHeaderOverlay {
+    width: 100%; height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.customerHeaderOverlay > h2 {
+    color: black;
+    font-weight: normal;
+}
+
+/*
+
+=====================================
+
+            Customer Content
+
+=====================================
+
+*/
+
+.customerContentContainer {
+    width: 60%; height: auto; max-width: 1200px;
+    margin: 36px auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.customerTest {
+    min-height: 300px;
+    border-radius: 12px;
+    box-shadow: 0px 0px 6px gray;
+}
+
+.customerTestHeader {
+    width: 100%; height: 80px;
+    margin: 8px;
+    position: relative;
+}
+
+.customerTestPhoto {
+    position: absolute;
+    top: calc((var(--customer-photo-dHeight) - var(--customer-photo-size)) / 2);
+    left: calc((var(--customer-photo-dWidth) - var(--customer-photo-size)) / 2);
+    width: var(--customer-photo-size); height: var(--customer-photo-size);
+    background-color: black;
+    border-radius: 45px;
+}
+
+.customerTestName {
+    position: absolute;
+    top: 15px;
+    left: calc(var(--customer-photo-dWidth) + 2px);
+}
+
+.customerTestName > h3 {
+    color: black;
+    font-weight: normal;
+}
+
+.customerTestScore {
+    position: absolute;
+    overflow: hidden;
+    top: 40px;
+    left: var(--customer-photo-dWidth);
+}
+
+.customerTestScore > h4 {
+    background-clip: text;
+    color: transparent;
+}
+
+.stars5 {
+    background: linear-gradient(90deg, gold 100%, gray 100%);
+}
+
+.stars4-5 {
+    background: linear-gradient(90deg, gold 90%, gray 90%);
+}
+
+.stars4 {
+    background: linear-gradient(90deg, gold 80%, gray 80%);
+}
+
+.customerTestText {
+    width: 100%; height: auto;
+}
+
+.customerTestText > p {
+    padding: 8px 24px 12px 24px;
+    color: black;
+    line-height: 1.4;
+}
+
+/*
+
+=====================================
+
+                Contact
+
+=====================================
+
+*/
+
+.contactHeaderContainer {
+    width: 100%; height: 350px;
+    margin: 0 auto;
+    background-image: url(../images/contactHeaderHero.jpg);
+    background-size: cover;
+    background-position: center 48%;
+    position: relative;
+}
+
+.contactHeaderOverlay {
+    width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, .5);
+}
+
+.contactHeaderOverlay > h3 {
+    font-weight: normal;
+    white-space: nowrap;
+    color: white;
+    position: absolute;
+    left: 50%; top: 50%;
+    transform: translate(-50%, -50%);
+    filter: brightness(2)
+}
+
+.contactContentContainer {
+    width: 60%; height: auto; max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contactContentContainer > p {
+    color: black;
+    text-align: center;
+    line-height: 1.5;
+}
+
+.contactContentBoxesContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: row;
+    margin: 12px auto;
+}
+
+.contactContentBox > h4 {
+    color: black;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.contactContentBox > ul {
+    color: black;
+    list-style: none;
+}
+
+.contactContentBox li {
+    line-height: 1.5;
+}
+
+.contactContentBox a {
+    color: black;
+    transition: color 300ms ease-in-out;
+}
+
+.contactContentBox a:hover {
+    color: #f3a562;
+}
+
+/*
+
+=====================================
+
+                Footer
+
+=====================================
+
+*/
+
+/* Can be found at styles/footer.css. */
+
+/* Hero image and other images */
+
+.cImg1, .cImg2, .cImg3, .customerImg1, .customerImg2, .customerImg3, .customerImg4, .customerImg5, .customerImg6 {
+    background-size: cover;
+    background-position: center;
+}
+
+.hImg {
+    background-image: url(../images/hImg.jpg);
+    background-size: cover;
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
+
+.chImg {
+    background-size: cover;
+    background-position: center 45%;
+    background-image: url(../images/chImg.jpg);
+}
+
+.cImg1 {
+    background-image: url(../images/cImg1.jpg);
+}
+
+.cImg2 {
+    background-image: url(../images/cImg2.jpg);
+}
+
+.cImg3 {
+    background-image: url(../images/cImg3.jpg);
+}
+
+.customerImg1 {
+    background-image: url(../images/custImg1.jpg);
+}
+
+.customerImg2 {
+    background-image: url(../images/custImg2.jpg);
+}
+
+.customerImg3 {
+    background-image: url(../images/custImg3.jpg);
+}
+
+.customerImg4 {
+    background-image: url(../images/custImg4.jpg);
+}
+
+.customerImg5 {
+    background-image: url(../images/custImg5.jpg);
+}
+
+.customerImg6 {
+    background-image: url(../images/custImg6.jpg);
+}
+
+@media (max-width: 3840px) {
+    .heroImageOverlay > h1 {
+        font-size: 9.6rem
+    }
+
+    .headerCTAButton > a {
+        font-size: 2.8rem;
+    }
+
+    .contentHeaderOverlay > h2 {
+        font-size: 7.2rem;
+    }
+
+    .coachingContent > p {
+        font-size: 2rem;
+    }
+    
+    .coachingProgramBox > h3 {
+        font-size: 2.8rem;
+    }
+
+    .coachIntroOverlay h2 {
+        font-size: 6rem;
+    }
+    
+    .customerHeaderOverlay > h2 {
+        font-size: 6rem;
+    }
+
+    .customerTestName > h3 {
+        font-size: 2.8rem;
+    }
+
+    .customerTestScore > h4 {
+        font-size: 3.6rem;
+    }
+    
+    .customerTestText > p {
+        font-size: 2rem;
+    }
+
+    .contactHeaderOverlay > h3 {
+        font-size: 7.2rem;
+    }
+
+    .contactContentContainer > p {
+        font-size: 3.2rem;
+    }
+
+    .contactContentBox > h4 {
+        font-size: 2.4rem;
+    }
+
+    .contactContentBox li {
+        font-size: 1.8rem;
+    }
+
+    .contactContentBox a {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 1920px) {
+    .heroImageOverlay > h1 {
+        font-size: 7.2rem
+    }
+    
+    .headerCTAButton > a {
+        font-size: 2.4rem;
+    }
+ 
+    .contentHeaderOverlay > h2 {
+        font-size: 6rem;
+    }
+    
+    .coachingContent > p {
+        font-size: 2rem;
+    }
+            
+    .coachingProgramBox > h3 {
+        font-size: 2.4rem;
+    }
+
+    .coachIntroOverlay h2 {
+        font-size: 6rem;
+    }
+            
+    .customerHeaderOverlay > h2 {
+        font-size: 6rem;
+    }
+    
+    .customerTestName > h3 {
+        font-size: 2.8rem;
+    }
+
+    .customerTestScore > h4 {
+        font-size: 3.6rem;
+    }
+    
+    .customerTestText > p {
+        font-size: 2rem;
+    }
+    
+    .contactHeaderOverlay > h3 {
+        font-size: 6rem;
+    }
+
+    .contactContentContainer > p {
+        font-size: 2.8rem;
+    }
+
+    .contactContentBox > h4 {
+        font-size: 2.2rem;
+    }
+
+    .contactContentBox li {
+        font-size: 1.8rem;
+    }
+
+    .contactContentBox a {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 1440px) {
+    .heroImageOverlay > h1 {
+        font-size: 6rem
+    }
+
+    .headerCTAButton {
+        bottom: 7.5%;
+    }
+
+    .headerCTAButton > a {
+        font-size: 2rem;
+    }
+
+    .contentHeaderContainer {
+        height: 250px;
+    }
+
+    .contentHeaderOverlay > h2 {
+        font-size: 5.2rem;
+    }
+
+    .coachingContentContainer {
+        width: 80%;
+    }    
+   
+    .coachingContent > p {
+        font-size: 1.8rem;
+    }
+        
+    .coachingProgramBox > h3 {
+        font-size: 2rem;
+    }
+
+    .coachIntroContainer {
+        width: 80%;
+    }
+    
+    .coachIntroOverlay h2 {
+        font-size: 5.2rem;
+    }
+
+    .contactHeaderContainer {
+        height: 250px;
+    }
+
+    .customerHeaderOverlay > h2 {
+        font-size: 4.8rem;
+    }
+    
+    .customerContentContainer {
+        width: 80%;
+    }
+
+    .customerTestName > h3 {
+        font-size: 2.4rem;
+    }
+
+    .customerTestScore > h4 {
+        font-size: 3.2rem;
+    }
+    
+    .customerTestText > p {
+        font-size: 1.8rem;
+    }
+
+    .contactHeaderOverlay > h3 {
+        font-size: 4.8rem;
+    }
+
+    .contactContentContainer {
+        width: 80%;
+    }
+
+    .contactContentContainer > p {
+        font-size: 2.4rem;
+    }
+
+    .contactContentBox > h4 {
+        font-size: 2rem;
+    }
+
+    .contactContentBox li {
+        font-size: 1.6rem;
+    }
+
+    .contactContentBox a {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 1280px) {
+    .heroImageOverlay > h1 {
+        font-size: 5rem
+    }
+    
+    .headerCTAButton > a {
+        font-size: 2rem;
+    }
+
+    .contentHeaderOverlay > h2 {
+        font-size: 5.2rem;
+    }
+       
+    .coachingContent > p {
+        font-size: 1.6rem;
+    }
+            
+    .coachingProgramBox > h3 {
+        font-size: 1.8rem;
+    }
+        
+    .coachIntroOverlay h2 {
+        font-size: 4.8rem;
+    }
+        
+    .customerHeaderOverlay > h2 {
+        font-size: 4.8rem;
+    }
+
+    .customerTestName > h3 {
+        font-size: 2.2rem;
+    }
+
+    .customerTestScore > h4 {
+        font-size: 2.8rem;
+    }
+    
+    .customerTestText > p {
+        font-size: 1.6rem;
+    }
+
+    .contactHeaderOverlay > h3 {
+        font-size: 4.8rem;
+    }
+
+    .contactContentContainer > p {
+        font-size: 2.4rem;
+    }
+
+    .contactContentBox > h4 {
+        font-size: 2rem;
+    }
+
+    .contactContentBox li {
+        font-size: 1.6rem;
+    }
+
+    .contactContentBox a {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    .heroImageOverlay > h1 {
+        font-size: 4.4rem
+    }
+    
+    .headerCTAButton > a {
+        font-size: 1.8rem;
+    }
+
+    .contentHeaderOverlay > h2 {
+        font-size: 4.8rem;
+    }
+       
+    .coachingContent > p {
+        font-size: 1.6rem;
+    }
+            
+    .coachingProgramBox > h3 {
+        font-size: 2rem;
+    }
+        
+    .coachIntroOverlay h2 {
+        font-size: 4.8rem;
+    }
+        
+    .customerHeaderOverlay > h2 {
+        font-size: 4.8rem;
+    }
+
+    .customerTestName > h3 {
+        font-size: 1.6rem;
+    }
+
+    .customerTestScore > h4 {
+        font-size: 2.4rem;
+    }
+    
+    .customerTestText > p {
+        font-size: 1.6rem;
+    }
+
+    .contactHeaderOverlay > h3 {
+        font-size: 5.4rem;
+    }
+
+    .contactContentContainer > p {
+        font-size: 2.4rem;
+    }
+
+    .contactContentBox > h4 {
+        font-size: 2rem;
+    }
+
+    .contactContentBox li {
+        font-size: 1.6rem;
+    }
+
+    .contactContentBox a {
+        font-size: 1.6rem;
+    } 
+}
+
+@media (min-width: 1024px) {
+    .coachInfoCards:hover .coachIMG, .coachInfoCards:hover .coachDesc {
+        filter: blur(8px);
+    }
+    
+    .coachExperience {
+        display: block;
+        opacity: 0;
+        width: 90%; height: 90%;
+        padding: 16px;
+        background-color: #f3f3f3;
+        box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: opacity 500ms ease-in-out;
+    }
+    
+    .coachInfoCards:hover .coachExperience {
+        opacity: 1;
+    }
+    
+    .coachExperience > p {
+        color: black;
+        line-height: 1.4;
+    }
+}
+
+@media (max-width: 768px) {
+    .hImg {
+        background-position: 35% center;
+    }
+    
+    .heroImageOverlay > h1 {
+        font-size: 4.4rem
+    }
+    
+    .headerCTAButton > a {
+        font-size: 1.8rem;
+    }
+
+    .contentHeaderOverlay > h2 {
+        font-size: 4.8rem;
+    }
+       
+    .coachingContent > p {
+        font-size: 1.6rem;
+    }
+            
+    .coachingProgramBox > h3 {
+        font-size: 2rem;
+    }
+        
+    .coachIntroOverlay h2 {
+        font-size: 4.8rem;
+    }
+        
+    .customerContentContainer {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .customerHeaderOverlay > h2 {
+        font-size: 4rem;
+    }
+
+    .customerTestName > h3 {
+        font-size: 1.6rem;
+    }
+
+    .customerTestScore > h4 {
+        font-size: 2.4rem;
+    }
+    
+    .customerTestText > p {
+        font-size: 1.6rem;
+    }
+
+    .contactHeaderOverlay > h3 {
+        font-size: 5.4rem;
+    }
+
+    .contactContentContainer > p {
+        font-size: 2.4rem;
+    }
+
+    .contactContentBox > h4 {
+        font-size: 2rem;
+    }
+
+    .contactContentBox li {
+        font-size: 1.6rem;
+    }
+
+    .contactContentBox a {
+        font-size: 1.6rem;
+    } 
+}
+
+@media (max-width: 480px) {
+    .heroImageContainer {
+        height: calc(100vh - 100px);
+    }
+    
+    .hImg {
+        background-position: 45% 0%;
+    }
+    
+    .heroImageOverlay {
+        top: 17.5%; 
+        left: 25%;
+    }
+    
+    .heroImageOverlay > h1 {
+        font-size: 4.4rem;
+        text-align: center;
+    }
+    
+    .headerCTAButton {
+        bottom: 7.5%;
+    }
+
+    .headerCTAButton > a {
+        font-size: 1.6rem;
+        background-image: linear-gradient(249deg, #60aef8, #f46692, #f3a562, #f46692, #60aef8, #f46692, #f3a562);
+        animation: gradientAnimation 12s linear infinite;
+        background-size: 300% 100%;
+    }
+
+    .contentHeaderContainer {
+        height: 200px;
+    }
+
+    .contentHeaderOverlay > h2 {
+        font-size: 3.2rem;
+    }
+
+    .coachingContentContainer {
+        width: 90%;
+    }
+
+    .coachingContentContainer {
+        width: 90%;
+        flex-direction: column;
+    }
+
+    .coachingContent {
+        width: 100%;
+    }
+
+    .coachingProgramBox {
+        height: 100px;
+    }
+
+    .coachingContent > p {
+        font-size: 1.8rem;
+    }
+            
+    .coachingProgramBox > h3 {
+        font-size: 1.8rem;
+    }
+
+    .coachIntroContainer {
+        width: 90%;
+    }
+        
+    .coachIntroOverlay h2 {
+        font-size: 3.6rem;
+    }
+
+    .customerHeaderContainer {
+        width: 95%;
+    }    
+
+    .customerHeaderOverlay > h2 {
+        font-size: 3.2rem;
+    }
+
+    .coachInfoContainer {
+        width: 90%;
+        grid-template-columns: 1fr;
+    }
+   
+    .customerContentContainer {
+        width: 90%;
+        grid-template-columns: 1fr;
+    }
+
+    .customerTest {
+        min-height: 250px;
+    }    
+    
+    .customerTestName > h3 {
+        font-size: 2.2rem;
+    }
+
+    .customerTestScore > h4 {
+        font-size: 2.8rem;
+    }
+    
+    .customerTestText > p {
+        font-size: 1.6rem;
+    }
+
+    .contactHeaderContainer {
+        height: 200px;
+    }
+
+    .contactHeaderOverlay > h3 {
+        font-size: 3.2rem;
+    }
+
+    .contactContentContainer > p {
+        font-size: 2rem;
+    }
+
+    .contactContentBoxesContainer {
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+        gap: 24px;
+    }
+
+    .contactContentBox > h4 {
+        font-size: 2rem;
+    }
+
+    .contactContentBox li {
+        font-size: 1.6rem;
+    }
+
+    .contactContentBox a {
+        font-size: 1.6rem;
+    }
+
+    .footerContainer > p > a {
+        font-size: 1.8rem;
+        text-align: center;
+    }
+
+    .footerContainer > p {
+        font-size: 1.8rem;
+        text-align: center;
+    }
+}

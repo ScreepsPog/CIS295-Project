@@ -1,0 +1,118 @@
+* {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 62.5%;
+}
+
+.contentContainer {
+    display: grid;
+    grid-template-columns: 1fr;
+    counter-reset: contentCount;
+}
+
+.contentContainer .contentBox.contentBox:not(:last-child) h1::before {
+    counter-increment: contentCount;
+    color: black;
+    content: counter(contentCount) ". ";
+}
+
+.contentBox {
+    width: 70%; height: auto; max-width: 1200px;
+    margin: 0 auto;
+    padding: 72px 0;
+}
+
+.contentBox h1 {
+    font-size: 4rem;
+}
+
+.contentBox:last-child h1 {
+    color: seagreen;
+}
+
+.contentBox h2 {
+    font-size: 3.6rem;
+}
+
+.contentBox p {
+    font-size: 2rem;
+    line-height: 1.6;
+    padding: 16px 0 0 48px;
+}
+
+.contentBox p span {
+    font-size: 2rem;
+    text-decoration: underline;
+}
+
+.contentBox p a {
+    color: black;
+    font-size: 2rem;
+}
+
+.contentBoxImgContainer {
+    width: 60%; height: auto;
+    margin: 0 auto;
+    padding: 48px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.contentBoxImgContainer img {
+    width: 100%; height: 100%;
+    border: 2px solid black;
+    padding: 8px;
+}
+
+.contentBox:last-child {
+    padding: 72px 0 36px 0;
+}
+
+.contentBox:not(:last-child) {
+    border-bottom: 4px dotted gray;
+}
+
+.footerBackTop > div > p > a {
+    font-size: 2rem;
+}
+
+.footerContact input {
+    font-size: 1.6rem;
+}
+
+.footerSocialCopyright > p {
+    font-size: 2rem;
+}
+
+@media (max-width: 481px) {
+    .contentBox {
+        width: 90%;
+    }
+    
+    .contentBox h1 {
+        font-size: 3rem;
+    }
+    
+    .contentBox h2 {
+        font-size: 2.6rem;
+    }
+
+    .contentBox p {
+        padding: 16px 0 0 24px;
+    }
+
+    .contentBoxImgContainer {
+        width: 100%;
+    }
+
+    .footerContainer {
+        border-top: 8px solid black;
+        padding-top: 24px;
+        background-color: #DDD;
+    }
+
+    .desktop {
+        display: none;
+    }
+}

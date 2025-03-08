@@ -1,0 +1,282 @@
+* {
+    margin: 0; padding: 0; border: 0;
+    box-sizing: border-box;
+} /* Reset Rule */
+
+/*
+
+=====================================
+
+            Base Styles
+
+=====================================
+
+*/
+
+html {
+    scroll-behavior: smooth;
+}
+
+p {
+    line-height: 1.5;
+}
+
+.backgroundImageFix {
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.codeContainer {
+    width: 60%; height: auto;
+    position: relative;
+    box-shadow: 2px 2px 8px black;
+    background-color: #f4f4f4;
+}
+
+.codeContainer {
+    margin-top: 20px;
+}
+
+.codeLang {
+    position: absolute;
+    top: 5px; right: 5px;
+    background-color: rgba(0, 0, 255, .6);
+}
+
+.codeLang p {
+    color: limegreen;
+    font-size: 20px;
+    padding: 1px 4px;
+}
+
+.codeBlock {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.codeBlock code {
+    white-space: pre-wrap;
+}
+
+.codeCopyButton {
+    position: absolute;
+    width: 35px; height: 35px;
+    right: 10px; bottom: 10px;
+    background-color: transparent;
+    background-image: url(../images/codeCopy.png);
+    background-size: 80%;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    opacity: 0.2;
+    border: 1px solid transparent;
+    box-shadow: 0 0 4px transparent;
+    transition: opacity 150ms ease-in-out, border 150ms ease-in-out, box-shadow 150ms ease-in-out, background-size 150ms ease-in-out, background-position 150ms ease-in-out;
+}
+
+.codeCopyButton:hover {
+    opacity: 1;
+    border: 1px solid rgba(0, 0, 0, .5);
+    box-shadow: 2px 2px 8px black;
+    background-size: 90%;
+    background-position: 25%;
+    cursor: pointer;
+}
+
+.switches {
+    margin-left: 1em;
+}
+
+input[type="checkbox"] {
+    opacity: 0;
+    position: absolute;
+    left: -9000px;
+    top: -9000px;
+    cursor: pointer;
+}
+
+input[type="checkbox"] + label {
+    position: relative;
+    display: flex; 
+    align-items: center;
+    cursor: pointer;
+}
+
+input[type="checkbox"].toggle1 + label::before {
+    content: "";
+    width: 2em;
+    height: 1em;
+    background-color: hsl(0, 80%, 90%);
+    border-radius: 1em;
+    margin-right: .25em;
+    transition: background-color 200ms ease-in-out;
+}
+
+input[type="checkbox"].toggle1 + label::after {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: .2em;
+    content: "\2715";
+    font-size: .5em;
+    width: 1.8em;
+    height: 1.8em;
+    background-color: hsl(0, 80%, 60%);
+    color: white;
+    border-radius: 1em;
+    transition: background-color 200ms ease-in-out, transform 200ms ease-in-out;
+}
+
+input[type="checkbox"]:focus + label::before {
+    outline: 1px solid black;
+}
+
+input[type="checkbox"].toggle1:checked + label::before {
+    background-color: hsl(100, 70%, 90%);
+}
+
+input[type="checkbox"].toggle1:checked + label::after {
+    content: "\2713";
+    transform: translateX(100%);
+    background-color: hsl(100, 70%, 60%);
+}
+
+input[type="checkbox"].toggle1:disabled + label {
+    color: #777
+}
+
+input[type="checkbox"].toggle1:disabled + label::before {
+    background-color: #CCC
+}
+
+input[type="checkbox"].toggle1:disabled + label::after {
+    background-color: #777
+}
+
+
+
+input[type="checkbox"].toggle2 + label::before {
+    content: "";
+    width: 2em;
+    height: .8em;
+    background-color: #DDD;
+    border-radius: 1em;
+    margin-right: .25em;
+    transition: background-color 200ms ease-in-out;
+}
+
+input[type="checkbox"].toggle2 + label::after {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: -.4em;
+    content: "\2715";
+    font-size: .75em;
+    width: 1.6em;
+    height: 1.6em;
+    background-color: white;
+    color: black;
+    border-radius: 1em;
+    border: 1px solid rgba(0, 0, 0, .2);
+    transition: background-color 200ms ease-in-out, transform 200ms ease-in-out, box-shadow 500ms ease-in-out, border 500ms ease-in-out;
+}
+
+input[type="checkbox"].toggle2 + label:hover::after {
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, .5);
+    border: 1px solid rgba(0, 0, 0, .7);
+}
+
+input[type="checkbox"].toggle2:checked + label::before {
+    background-color: hsl(100, 70%, 90%);
+}
+
+input[type="checkbox"].toggle2:checked + label::after {
+    content: "\2713";
+    transform: translateX(100%);
+    background-color: hsl(100, 70%, 60%);
+}
+
+
+
+input[type="checkbox"].toggle3 + label::before {
+    content: "";
+    width: 2em;
+    height: .2em;
+    background-color: #DDD;
+    border-radius: 1em;
+    margin-right: .25em;
+    transition: background-color 200ms ease-in-out;
+}
+
+input[type="checkbox"].toggle3 + label::after {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: -.3em;
+    content: "";
+    width: 1.1em;
+    height: 1.1em;
+    background-color: white;
+    color: black;
+    border-radius: 1em;
+    border: 1px solid rgba(0, 0, 0, .4);
+    transition: background-color 200ms ease-in-out, transform 200ms ease-in-out, box-shadow 500ms ease-in-out, border 500ms ease-in-out;
+}
+
+input[type="checkbox"].toggle3 + label:hover::after {
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, .5);
+    border: 1px solid rgba(0, 0, 0, .9);
+}
+
+input[type="checkbox"].toggle3:checked + label::before {
+    background-color: skyblue;
+}
+
+input[type="checkbox"].toggle3:checked + label::after {
+    content: "";
+    transform: translateX(100%);
+    background-color: skyblue;
+}
+
+
+
+input[type="checkbox"].toggle4 + label::before {
+    content: "";
+    width: 3.4em;
+    height: 1.4em;
+    background-color: #DDD;
+    border-radius: .5em;
+    margin-right: .25em;
+    transition: background-color 200ms ease-in-out;
+}
+
+input[type="checkbox"].toggle4 + label::after {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    content: "";
+    width: 1.5em;
+    height: 1.1em;
+    border-radius: .35em;
+    background-color: white;
+    color: black;
+    border: 1px solid rgba(0, 0, 0, .4);
+    transition: background-color 200ms ease-in-out, transform 200ms ease-in-out, box-shadow 500ms ease-in-out, border 500ms ease-in-out;
+}
+
+input[type="checkbox"].toggle4 + label:hover::after {
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, .5);
+    border: 1px solid rgba(0, 0, 0, .9);
+}
+
+input[type="checkbox"].toggle4:checked + label::before {
+    background-color: hsl(100, 70%, 90%);
+}
+
+input[type="checkbox"].toggle4:checked + label::after {
+    content: "";
+    transform: translateX(100%);
+    background-color: hsl(100, 70%, 75%);
+}

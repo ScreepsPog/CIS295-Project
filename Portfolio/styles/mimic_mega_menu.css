@@ -1,0 +1,259 @@
+* {
+    margin: 0; padding: 0; border: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 62.5%;
+} /* Reset Rule */
+
+body {
+    background-color: #333
+}
+
+/* Pre Expand */
+
+.navContainer {
+    width: 100%; height: 61px;
+    background-color: black;
+    position: fixed;
+    border-bottom: 1px solid #44D62C;
+    z-index: 3;
+}
+
+.navContentContainer {
+    max-width: 1200px; height: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navContentItem {
+    height: 100%;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid transparent;
+    transition: border-bottom 200ms ease-in-out;
+}
+
+.navContentItem > img {
+    width: 35px; height: 35px;
+    overflow: hidden;
+}
+
+.navContentItem > a.logoLink {
+    width: 35px; height: 35px;
+    display: block;
+}
+
+.navContentItem > a {
+    width: 100%; height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 1.4rem;
+    text-decoration: none;
+    color: #BBB;
+    transition: color 200ms ease-in-out;
+}
+
+.navContentItem:not(:first-child) > a {
+    padding: 0 24px;
+}
+
+.navContentItem > svg {
+    width: 65%; height: 65%;
+    overflow: hidden;
+    transition: fill 300ms ease-in-out;
+}
+
+.navContentItem:hover > svg {
+    fill: white;
+}
+
+.navSearch {
+    width: 35px; height: 35px;
+    position: relative;
+}
+
+.navSearchIcon {
+    width: 16px; height: 16px;
+    border: 3px solid #BBB;
+    border-radius: 50%;
+    position: absolute;
+    top: 8px; left: 5px;
+    transition: border 300ms ease-in-out;
+}
+
+.navSearchIcon::after {
+    width: 12.5px; height: 3px;
+    content: "";
+    background-color: #BBB;
+    position: absolute;
+    top: 12px;
+    left: 7px;
+    transform: rotate(45deg);
+    transition: background-color 300ms ease-in-out;
+}
+
+.navContentExpand {
+    width: 100%; height: 0px;
+    position: absolute;
+    top: 61px; left: 0;
+    background-color: #222;
+    overflow: hidden;
+    z-index: 2;
+    transition: height 500ms ease-in-out;
+}
+
+.navContentExpand > a {
+    font-size: 3rem;
+    text-decoration: none;
+    color: #BBB;
+}
+
+.navContentItem:hover .navContentExpand {
+    height: 700px;
+    border-bottom: 1px solid #44D62C;
+}
+
+.navContentItem:hover:not(:first-child) {
+    border-bottom: 1px solid white;
+}
+
+.navContentItem:hover > a {
+    color: white;
+}
+
+.navContentItem:hover {
+    cursor: pointer;
+}
+
+.navContentItem:hover > .navSearch > .navSearchIcon {
+    border: 3px solid white;
+}
+
+.navContentItem:hover > .navSearch > .navSearchIcon::after {
+    background-color: white;
+}
+
+/* After Expand */
+
+.navContentExpandWrapper {
+    width: 100%; max-width: 1200px;
+    margin: 0 auto;
+    padding: 24px 0;
+    display: flex;
+    flex-direction: row;
+}
+
+.navContentExpandContainer {
+    width: 300px; height: 652px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.navContentExpandContainer > p, .navContentExpandExtraContainer > p {
+    font-size: 1.2rem;
+    color: #BBB;
+}
+
+.navContentExpandContainer > a, .navContentExpandContainer > .navContentExtraExpand > button, .navContentExpandExtraContainer > a {
+    width: 100%; max-width: 300px;
+    font-size: 1.6rem;
+    padding: 1.2rem 0;
+    color: white;
+    text-decoration: none;
+    text-align: left;
+    background-color: transparent;
+    transition: color 200ms ease-in-out;
+}
+
+.navContentExtraExpand {
+    width: 100%; max-width: 300px;
+}
+
+.navContentExtraExpand > a, .navContentExpandExtraContainer > a {
+    display: block;
+    width: 100%;
+}
+
+.navContentExpandImageContainer {
+    width: 100%; height: 652px; max-width: 600px;
+}
+
+.navContentExpandImageContainer > a {
+    display: block;
+}
+
+.navContentExpandImageContainer > a > img {
+    max-width: 100%; max-height: 100%;
+    overflow: hidden;
+}
+
+.navContentExpandContainer:nth-child(2) {
+    padding-right: 72px;
+    border-right: 4px solid #444;
+    border-left: 4px solid #444;
+}
+
+.navContentExpandContainer:nth-of-type(2), .navContentExpandImageContainer {
+    padding-left: 16px;
+}
+
+.navContentExpandContainer:nth-child(2) > a {
+    font-size: 1.4rem;
+}
+
+.navContentExpandContainer > a:hover, .navContentExpandContainer > .navContentExtraExpand:hover > button, .navContentExpandExtraContainer > a:hover {
+    color: #44D62C;
+    cursor: pointer;
+}
+
+.navContentExpandContainer > .navContentExtraExpand > button > span::after {
+    content: '';
+    float: right;
+    transform: rotate(-45deg) translateX(-5px);
+    width: 10px;
+    height: 10px;
+    border-right: 2px solid white;
+    border-bottom: 2px solid white;
+    transition: border-color 200ms ease-in-out;
+    margin-right: 48px;
+}
+
+.navContentExpandContainer > .navContentExtraExpand:hover > button > span::after {
+    border-right: 2px solid #44D62C;
+    border-bottom: 2px solid #44D62C;
+}
+
+
+/* Extra Expand */
+
+.navContentExpandExtraContainer {
+    display: none;
+}
+
+.navContentExtraExpand:hover .navContentExpandExtraContainer {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 296px; height: 652px;
+    background-color: #222;
+    left: 300px; top: 0px;
+    z-index: 4;
+    border-left: 4px solid #444;
+    overflow-y: auto;
+}
+
+.navContentExpandExtraContainer > a, .navContentExpandExtraContainer > p {
+    padding-left: 1.6rem; padding-right: 1.6rem;
+}
+
+.navContentExpandExtraContainer > p:not(:first-of-type) {
+    padding-top: 24px;
+}

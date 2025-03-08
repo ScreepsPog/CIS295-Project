@@ -1,0 +1,179 @@
+.footerContainer {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+}
+
+.footerBackTop {
+    text-align: center;
+    order: 2;
+    font-size: 20px;
+}
+
+.footerBackTop div:first-child > p:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.footerSocialCopyright {
+    order: 3;
+}
+
+.footerSocialCopyright > p {
+    text-align: center;
+    margin: 12px 0;
+}
+
+.footerIconContainer {
+    width: 100%; height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin: 12px 0;
+}
+
+.footerIcon {
+    width: 50px; height: 50px;
+    border-radius: 45px;
+    background-color: powderblue;
+}
+
+.footerIcon a {
+    display: block;
+    width: 100%; height: 100%;
+    border-radius: 45px;
+    text-decoration: none;
+    overflow: hidden;
+}
+
+.footerIcon a img {
+    width: 80%; height: 80%;
+    margin: 10% 0 0 10%;
+}
+
+.footerContact {
+    order: 1;
+    width: 80%; max-width: 450px; height: 600px;
+    margin: 0 auto;
+    padding: 8px;
+    border-radius: 8px;
+    background-color: skyblue;
+}
+
+.footerContact form {
+    width: 100%; height: 450px;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    row-gap: 8px;
+}
+
+.footerContactAttenion {
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footerContact p {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.footerContact label {
+    font-size: 18px;
+    margin-left: 5%;
+}
+
+.footerContact input {
+    width: 90%;
+    margin-top: 12px;
+    margin-left: 5%;
+    padding: 12px;
+    border: 1px solid rgba(0, 0, 0, .7);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .7);
+}
+
+.footerContact button {
+    margin-left: 5%;
+    font-size: 20px;
+    padding: 12px 16px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+}
+
+.footerContact button:hover {
+    cursor: pointer;
+    background-color: white;
+}
+
+@media (min-width: 1024px) {
+    .desktop {
+        display: flex;
+        align-items: end;
+        justify-content: center;
+    }
+
+    .mobile {
+        display: none;
+    }
+    
+    .footerContainer {
+        background-color: #DDD;
+        border-top: 4px solid black;
+        padding-top: 8px;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .footerSocialCopyright {
+        order: 1;
+    }
+    
+    .footerBackTop {
+        order: 2;
+    }
+    
+    .footerContact {
+        order: 2;
+    }
+
+    .footerContact {
+        width: 90%; height: 550px;
+        margin-bottom: 12px;
+    }
+
+    .footerContact form {
+        width: 100%; height: 400px;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        row-gap: 8px;
+    }
+
+    .footerContact button {
+        margin-left: 5%;
+        margin-top: 24px;
+    }
+
+    .footerBackTop {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .footerBackTop p:first-child {
+        font-size: 32px;
+    }
+
+    .footerBackTop p:last-child {
+        font-size: 28px;
+        padding-bottom: 12px;
+    }
+
+    .footerSocialCopyright {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: end;
+        margin-bottom: 12px;
+    }
+}

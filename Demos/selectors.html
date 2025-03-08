@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>12 CSS Selectors to use in your next Web Development Project - Austin Augard</title>
+        <link rel="stylesheet" href="styles/demo.css">
+        <link rel="stylesheet" href="../styles/home.css">
+        <link rel="stylesheet" href="styles/selectors.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css">
+    </head>
+    <body>
+        <div class="returnHomeButton">
+            <a href="../index.html"><img src="../images/home.png" alt=""></a>
+        </div>
+        <div class="bodyContainer">
+            <div class="headerContainer">
+                <h1>12 CSS Selectors to use in your next Web Development Project</h1>
+            </div>
+            <nav class="navMenuContainer">
+                <ul>
+                    <li class="navMenuItem">
+                        <a href="#basicSelectors">Basic Selectors</a>
+                        <div class="navDropdown">
+                            <ul>
+                                <li><a href="#elementSelector">Element</a></li>
+                                <li><a href="#idSelector">ID</a></li>
+                                <li><a href="#classSelector">Class</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="navMenuItem">
+                        <a href="#attributionSelectors">Attribution Selectors</a>
+                        <div class="navDropdown">
+                            <ul>
+                                <li><a href="#attributeTypeSelector">Type</a></li>
+                                <li><a href="#attributeTypeValueSelector">Value</a></li>
+                                <li><a href="#attributeTypeSubstringSelector">Substring</a></li>
+                                <li><a href="#attributeTypeBeginsSelector"> Begins with</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="navMenuItem">
+                        <a href="#otherSelectors">Other Selectors</a>
+                        <div class="navDropdown">
+                            <ul>
+                                <li><a href="#notSelector">Not</a></li>
+                                <li><a href="#nestedSelectorSelector">Nested</a></li>
+                                <li><a href="#hoverSelector">Hover</a></li>
+                                <li><a href="#checkedSelector">Checked</a></li>
+                                <li><a href="#targetSelector">Target</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+            <div class="demoContainer">
+                <header class="selectorCategory" id="basicSelectors">
+                    <h1>Basic Selectors</h1>
+                </header>
+                <div class="selectorContainer" id="elementSelector">
+                    <div class="exampleHeader">
+                        <h2>Element</h2>
+                    </div>
+                    <div class="codeContainer">
+                        <div class="codeLang">
+                            <p>HTML</p>
+                        </div>
+                        <pre class="codeBlock language-html"><code id="htmlSelect1">&lt;p&gt;Lorem ipsum dolar&lt;/p&gt;
+
+&lt;div&gt;
+    &lt;p&gt;Lorem ipsum dolar&lt;/p&gt;
+    &lt;p&gt;dolar ipsum Lorem&lt;/p&gt;
+&lt;/div&gt;</code> </pre>
+                        <div class="codeCopyButton" onclick="copyCode('htmlSelect1')"></div>
+                    </div>
+                    <div class="codeContainer">
+                        <div class="codeLang">
+                            <p>CSS</p>
+                        </div>
+                        <pre class="codeBlock language-css"><code id="cssSelect1">p {
+    color: green;
+    font-size: 28px;
+}</code> </pre>
+                        <div class="codeCopyButton" onclick="copyCode('cssSelect1')"></div>
+                    </div>
+                    <div class="exampleDescription">
+                        <h3>Explanation</h3>
+                        <p>The Element Selector is the most common type of selector. A element with CSS rules will have those rules applied for all other elements of the same type. <br><br>For example, the code above modifies all P elements in the div, and outside the div.</p>
+                    </div>
+                </div>
+                <div class="selectorContainer" id="idSelector">
+                    <div class="exampleHeader">
+                        <h2>ID</h2>
+                    </div>
+                    <div class="codeContainer">
+                        <div class="codeLang">
+                            <p>HTML</p>
+                        </div>
+                        <pre class="codeBlock language-html"><code id="htmlSelect2">&lt;p id="myParagraph"&gt;
+    ...
+&lt;/p&gt;</code> </pre>
+                        <div class="codeCopyButton" onclick="copyCode('htmlSelect2')"></div>
+                    </div>
+                    <div class="codeContainer">
+                        <div class="codeLang">
+                            <p>CSS</p>
+                        </div>
+                        <pre class="codeBlock language-css"><code id="cssSelect2">#myParagraph {
+    font-size: 24px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}</code> </pre>
+                        <div class="codeCopyButton" onclick="copyCode('cssSelect2')"></div>
+                    </div>
+                    <div class="exampleDescription">
+                        <h3>Explanation</h3>
+                        <p>The ID Selector selects a element with a id attribute with a certain value. <br><br>For example, within the code above, the p element has the id named "myParagraph". Within CSS, we can reference this specific ID using the hashtag (#) sign, followed by the name and rules. Note that any element with the same ID will have rules applied as well.</p>
+                    </div>
+                </div>
+                <div class="selectorContainer" id="classSelector">
+                    <div class="exampleHeader">
+                        <h2>Class</h2>
+                    </div>
+                    <div class="codeContainer">
+                        <div class="codeLang">
+                            <p>HTML</p>
+                        </div>
+                        <pre class="codeBlock language-html"><code id="htmlSelect3">&lt;div class="container"&gt;
+    ...
+&lt;/div&gt;
+
+&lt;nav class="container"&gt;
+    ...
+&lt;/nav&gt;</code> </pre>
+                        <div class="codeCopyButton" onclick="copyCode('htmlSelect3')"></div>
+                    </div>
+                    <div class="codeContainer">
+                        <div class="codeLang">
+                            <p>CSS</p>
+                        </div>
+                        <pre class="codeBlock language-css"><code id="cssSelect3">.container {
+    margin: 16px 12px;
+}
+
+nav.container {
+    width: 100%; height: 50px;
+    background-color: blue;
+}</code> </pre>
+                        <div class="codeCopyButton" onclick="copyCode('cssSelect3')"></div>
+                    </div>
+                    <div class="exampleDescription">
+                        <h3>Explanation</h3>
+                        <p>The Class Selector selects a element with a class attribute with a certain value. This selector is near identical to the ID selector, but is called using the period (.) symbol within CSS. A class selector can select a specific element type that has that class applied, and only effect that element type. <br><br>For example, the code above shows the basic usage like the ID selector, but when setting rules for nav.container, this will only apply to nav's with the class "container".</p>
+                    </div>
+                </div>
+                <header class="selectorCategory" id="attributionSelectors">
+                    <h1>Attribution Selectors</h1>
+                </header>
+                <div class="selectorContainer" id="attributeTypeSelector">
+                    <div class="exampleHeader">
+                        <h2>Type</h2>
+                    </div>
+                    <div class="codeContainer">
+                        <div class="codeLang">
+                            <p>HTML</p>
+                        </div>
+                        <pre class="codeBlock language-html"><code id="htmlSelect4">&lt;div&gt;
+    &lt;a href="https://www.google.com/"&gt;Google&lt;/a&gt;
+&lt;/div&gt;</code> </pre>
+                        <div class="codeCopyButton" onclick="copyCode('htmlSelect4')"></div>
+                    </div>
+                    <div class="codeContainer">
+                        <div class="codeLang">
+                            <p>CSS</p>
+                        </div>
+                        <pre class="codeBlock language-css"><code id="cssSelect4">a[href] {
+    text-decoraction: none;
+    color: white;
+}</code> </pre>
+                        <div class="codeCopyButton" onclick="copyCode('cssSelect4')"></div>
+                    </div>
+                    <div class="exampleDescription">
+                        <h3>Explanation</h3>
+                        <p>The Attribute Type Selector will select a specified element type that has a certain attribute declared. <br><br>For example, the code above shows that the anchor element within the div element has an href attribute. Within CSS, we can make any anchor element with the href attribute apply these rules.</p>
+                    </div>
+                </div>
+                <div class="selectorContainer" id="attributeTypeValueSelector">
+                    <div class="exampleHeader">
+                        <h2>Value</h2>
+                    </div>
+                    <div class="codeContainer">
+                        <div class="codeLang">
+                            <p>HTML</p>
+                        </div>
+                        <pre class="codeBlock language-html"><code id="htmlSelect5">&lt;div&gt;
+    &lt;a href="https://www.google.com/"&gt;Google&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+    &lt;a href="https://www.apple.com/"&gt;Apple&lt;/a&gt;
+&lt;/div&gt;</code> </pre>
+                        <div class="codeCopyButton" onclick="copyCode('htmlSelect5')"></div>
+                    </div>
+                    <div class="codeContainer">
+                        <div class="codeLang">
+                            <p>CSS</p>
+                        </div>
+                        <pre class="codeBlock language-css"><code id="cssSelect5">a[href="https://www.google.com/"] {
+    text-decoraction: none;
+    color: white;
+}</code> </pre>
+                        <div class="codeCopyButton" onclick="copyCode('cssSelect5')"></div>
+                    </div>
+                    <div class="exampleDescription">
+                        <h3>Explanation</h3>
+                        <p>The Attribute Type and Value Selector will select a specified element that has a certain attribute declared and a value equal to a certain value. <br><br>For example, the code above shows 2 div elements, both containing an anchor element with href attributes, but each href attribute has a different value. Within CSS, the rule declared will only effect elements with the attribute href equal to google.com.</p>
+                    </div>
+                </div>
+                <div class="selectorContainer" id="attributeTypeSubstringSelector">
+                    <div class="exampleHeader">
+                        <h2>Substring</h2>
+                    </div>
+                    <div class="codeContainer">
+                        <div class="codeLang">
+                            <p>HTML</p>
+                        </div>
+                        <pre class="codeBlock language-html"><code id="htmlSelect6">&lt;div&gt;
+    &lt;a href="https://www.google.com/"&gt;Google&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+    &lt;a href="https://www.apple.com/"&gt;Apple&lt;/a&gt;
+&lt;/div&gt;</code> </pre>
+                        <div class="codeCopyButton" onclick="copyCode('htmlSelect6')"></div>
+                    </div>
+                    <div class="codeContainer">
+                        <div class="codeLang">
+                            <p>CSS</p>
+                        </div>
+                        <pre class="codeBlock language-css"><code id="cssSelect6">a[href*="apple"] {
+    text-decoraction: none;
+    color: silver;
+    font-size: 28px;
+}</code> </pre>
+                        <div class="codeCopyButton" onclick="copyCode('cssSelect6')"></div>
+                    </div>
+                    <div class="exampleDescription">
+                        <h3>Explanation</h3>
+                        <p>The Attribute Type and Substring Selector will select a specified element that has a specific attribute with a string anywhere within the value declared. <br><br>For example, the code above is similar to the Attribute Type  and Value Selector, however, you may notice that within CSS, the href has an asterisk (*) after it and before the equal sign. This means it will look for any anchor element with an href attribute that has the word "apple" within the attribute's value and apply the CSS rules.</p>
+                    </div>
+                </div>
+                <div class="selectorContainer" id="attributeTypeBeginsSelector">
+                    <div class="exampleHeader">
+                        <h2><a href="https://www.w3schools.com/cssref/sel_attr_begin.php">Begins with</a></h2>
+                    </div>
+                    <div class="codeContainer">
+                        <div class="codeLang">
+                            <p>HTML</p>
+                        </div>
+                        <pre class="codeBlock language-html"><code id="htmlSelect7">&lt;div&gt;
+    &lt;a href="aaugard.ninetyfive.dev/"&gt;Check my website!&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+    &lt;a href="ninetyfive.dev/cis295/"&gt;Check out the class!&lt;/a&gt;
+&lt;/div&gt;</code> </pre>
+                        <div class="codeCopyButton" onclick="copyCode('htmlSelect7')"></div>
+                    </div>
+                    <div class="codeContainer">
+                        <div class="codeLang">
+                            <p>CSS</p>
+                        </div>
+                        <pre class="codeBlock language-css"><code id="cssSelect7">a[href^="aaugard"] {
+    text-decoraction: none;
+    color: silver;
+    background-color: green;
+    padding: 8px;
+    border: 2px solid black;
+}</code> </pre>
+                        <div class="codeCopyButton" onclick="copyCode('cssSelect7')"></div>
+                    </div>
+                    <div class="exampleDescription">
+                        <h3>Explanation</h3>
+                        <p>The Beings with attribute selector selects only elements where the attribute value's begins with a certain value or phrase.<br><br>For example, the code above has 2 div elements, both containing a anchor tag. To edit every anchor tag with a href that begins with "aaugard", I can apply the rule stated in the code to only effect that element. This can be useful for when you want to only effect one element without using IDs or classes.</p>
+                    </div>
+                </div>
+                <header class="selectorCategory" id="otherSelectors">
+                    <h1>Other Selectors</h1>
+                </header>
+                <div class="selectorContainer" id="notSelector">
+                    <div class="exampleHeader">
+                        <h2><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:not">Not</a></h2>
+                    </div>
+                    <div class="codeContainer">
+                        <div class="codeLang">
+                            <p>HTML</p>
+                        </div>
+                        <pre class="codeBlock language-html"><code id="htmlSelect8">&lt;div&gt;
+    &lt;a href="https://www.microsoft.com/"&gt;Microsoft&lt;/a&gt;
+&lt;/div&gt;
+&lt;div&gt;
+    &lt;a href="https://www.x.com/"&gt;X&lt;/a&gt;
+&lt;/div&gt;</code> </pre>
+                        <div class="codeCopyButton" onclick="copyCode('htmlSelect8')"></div>
+                    </div>
+                    <div class="codeContainer">
+                        <div class="codeLang">
+                            <p>CSS</p>
+                        </div>
+                        <pre class="codeBlock language-css"><code id="cssSelect8">a:not(:first-child) {
+    color: pink;
+    font-weight: bold;
+}</code> </pre>
+                        <div class="codeCopyButton" onclick="copyCode('cssSelect8')"></div>
+                    </div>
+                    <div class="exampleDescription">
+                        <h3>Explanation</h3>
+                        <p>The Not selector is used mostly in conjuction with other selectors or rules. Its job is to do the opposite of what is inside it wants to do. <br><br>For example, the code above has 2 div elements, both contain a anchor tag. In the CSS rules, the rule selects everything but the first-child and applies the rules. This can extremely useful when you want the inverse of a selector.</p>
+                    </div>
+                </div>
+                <div class="selectorContainer" id="nestedSelectorSelector">
+                    <div class="exampleHeader">
+                        <h2><a href="https://www.w3schools.com/cssref/sel_nesting.php">Nested</a></h2>
+                    </div>
+                    <div class="codeContainer">
+                        <div class="codeLang">
+                            <p>HTML</p>
+                        </div>
+                        <pre class="codeBlock language-html"><code id="htmlSelect7">&lt;div&gt;
+    &lt;a href="https://www.youtube.com/"&gt;YouTube&lt;/a&gt;
+&lt;/div&gt;</code> </pre>
+                        <div class="codeCopyButton" onclick="copyCode('htmlSelect9')"></div>
+                    </div>
+                    <div class="codeContainer">
+                        <div class="codeLang">
+                            <p>CSS</p>
+                        </div>
+                        <pre class="codeBlock language-css"><code id="cssSelect9">div {
+    width: 100%; height: auto;
+    background-color: gray;
+    & > a {
+        text-decoraction: none;
+        color: white;
+        font-size: 28px;
+        &:hover {
+            color: green;
+            text-decoraction: underline;
+        }
+    }
+}</code> </pre>
+                        <div class="codeCopyButton" onclick="copyCode('cssSelect9')"></div>
+                    </div>
+                    <div class="exampleDescription">
+                        <h3>Explanation</h3>
+                        <p>The Nested selector applies CSS rules inside another declared CSS rule.<br><br>For example, the code above shows a div element with a anchor tag inside. In the declared CSS rule for the div, there is another rule declared inside the div rule, which effects the anchor tag, then the hover effect on the anchor tag. Think of each ampersand (&) as a new rule. This can be helpful in compacting your CSS file's line count, or for reading.</p>
+                    </div>
+                </div>
+                <div class="selectorContainer" id="hoverSelector">
+                    <div class="exampleHeader">
+                        <h2><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:hover">Hover</a></h2>
+                    </div>
+                    <div class="codeContainer">
+                        <div class="codeLang">
+                            <p>HTML</p>
+                        </div>
+                        <pre class="codeBlock language-html"><code id="htmlSelect10">&lt;div&gt;
+    &lt;a href="https://www.cocc.edu/"&gt;COCC&lt;/a&gt;
+&lt;/div&gt;</code> </pre>
+                        <div class="codeCopyButton" onclick="copyCode('htmlSelect10')"></div>
+                    </div>
+                    <div class="codeContainer">
+                        <div class="codeLang">
+                            <p>CSS</p>
+                        </div>
+                        <pre class="codeBlock language-css"><code id="cssSelect10">a:hover {
+    color: limegreen;
+    cursor: crosshair;
+}</code> </pre>
+                        <div class="codeCopyButton" onclick="copyCode('cssSelect10')"></div>
+                    </div>
+                    <div class="exampleDescription">
+                        <h3>Explanation</h3>
+                        <p>The Hover selector is one the most common used selectors aside from the basics. The hover selector will activate any time a element is hovered. <br><br>For example, the code above shows a anchor tag that leads to COCC. When the user goes to hover and click this link, the anchor element will change color and the cursor. This is useful in many different areas, such as drop down menus, or something simple like this.</p>
+                    </div>
+                </div>
+                <div class="selectorContainer" id="checkedSelector">
+                    <div class="exampleHeader">
+                        <h2><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:checked">Checked</a></h2>
+                    </div>
+                    <div class="codeContainer">
+                        <div class="codeLang">
+                            <p>HTML</p>
+                        </div>
+                        <pre class="codeBlock language-html"><code id="htmlSelect11">&lt;form&gt;
+    &lt;label&gt;&lt;input name="checkbox1" type="checkbox"&gt;Box&lt;/label&gt;
+&lt;/form&gt;</code> </pre>
+                        <div class="codeCopyButton" onclick="copyCode('htmlSelect11')"></div>
+                    </div>
+                    <div class="codeContainer">
+                        <div class="codeLang">
+                            <p>CSS</p>
+                        </div>
+                        <pre class="codeBlock language-css"><code id="cssSelect11">input:checked {
+    outline: 2px solid green;
+}</code> </pre>
+                        <div class="codeCopyButton" onclick="copyCode('cssSelect11')"></div>
+                    </div>
+                    <div class="exampleDescription">
+                        <h3>Explanation</h3>
+                        <p>The Checked selector is specific to form inputs like radio and checkbox types. This selector activates when a radio or checkbox is clicked and selected.<br><br>For example, the code above has a basic form and a checkbox. When the checkbox is checked, the rules declared in CSS will apply. This can be useful for changing the look of a radio or checkbox when checked.</p>
+                    </div>
+                </div>
+                <div class="selectorContainer" id="targetSelector">
+                    <div class="exampleHeader">
+                        <h2><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:target">Target</a></h2>
+                    </div>
+                    <div class="codeContainer">
+                        <div class="codeLang">
+                            <p>HTML</p>
+                        </div>
+                        <pre class="codeBlock language-html"><code id="htmlSelect12">&lt;div id="myDiv"&gt;
+    ...
+&lt;/div&gt;
+
+&lt;a href="#myDiv"&gt;Click me!&lt;/a&gt;</code> </pre>
+                        <div class="codeCopyButton" onclick="copyCode('htmlSelect12')"></div>
+                    </div>
+                    <div class="codeContainer">
+                        <div class="codeLang">
+                            <p>CSS</p>
+                        </div>
+                        <pre class="codeBlock language-css"><code id="cssSelect12">#myDiv:target {
+    border: 4px solid red;
+    box-shadow: 2px 2px 16px red;
+}</code> </pre>
+                        <div class="codeCopyButton" onclick="copyCode('cssSelect12')"></div>
+                    </div>
+                    <div class="exampleDescription">
+                        <h3>Explanation</h3>
+                        <p>The Target selector will activate when a ID selector is within the URL. <br><br>For example, the code above shows a div element with the ID "myDiv". There is also a anchor tag that directs to the ID when clicked. When the anchor tag is clicked, the target element is activated, and the CSS rules apply. This is useful for when you may want to highlight something on click.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Script for code syntax -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
+        <!-- Script to copy code -->
+        <script>
+            function copyCode(selector) {
+                const codeElement = document.getElementById(selector);
+                if (codeElement) {
+                    const codeText = codeElement.textContent;
+                    navigator.clipboard.writeText(codeText);
+                }
+            }
+        </script>
+    </body>
+</html>

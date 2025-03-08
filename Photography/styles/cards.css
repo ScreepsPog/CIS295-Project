@@ -1,0 +1,113 @@
+.photographerInfoContainer {
+    width: 80%; height: auto;
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    row-gap: 40px;
+}
+
+.photographerCard {
+    box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+    overflow: hidden;
+}
+
+.photographerCardImg {
+    width: 100%; height: auto;
+    aspect-ratio: 6/5;
+    position: relative;
+}
+
+.photographerCardImg > p {
+    position: absolute;
+    margin: 8px;
+    padding: 16px;
+    color: white;
+    font-size: 1.6rem;
+    background-color: rgba(39, 39, 39, .9);
+}
+
+.photographerCardImg > a {
+    position: absolute;
+    right: 0;
+    margin: 8px;
+    padding: 12px;
+    color: white;
+    background-color: rgba(39, 39, 39, .9);
+    transition: background-color 500ms ease-in-out;
+}
+
+.photographerCardImg a:hover {
+    background-color: rgba(102, 102, 102, .9);
+}
+
+.photographerCardImg a img {
+    width: 100%; height: 100%;
+}
+
+.photographerCardDesc {
+    background-color: rgb(48, 48, 48);
+    height: 100%;
+}
+
+.photographerCardDesc p {
+    text-align: center;
+    font-size: 1.8rem;
+    line-height: 1.5;
+    padding: 12px;
+}
+
+.photographerCardDesc p:first-child {
+    font-size: 2.4rem;
+    border-bottom: 2px solid black;
+}
+
+.pImg1, .pImg2, .pImg3, .pImg4 {
+    background-size: cover;
+    background-position: center 10%;
+}
+
+.pImg1 {
+    background-image: url(../images/pImg1.jpg);
+}
+
+.pImg2 {
+    background-image: url(../images/pImg2.jpg);
+    background-position: center;
+}
+
+.pImg3 {
+    background-image: url(../images/pImg3.jpg);
+}
+
+.pImg4 {
+    background-image: url(../images/pImg4.jpg);
+}
+
+@media(min-width: 768px) {
+    .photographerInfoContainer {
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 40px;
+    }
+}
+
+@media(min-width: 1024px) {
+    .photographerInfoContainer {
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 40px;
+    }
+
+    .photographerCardDesc p {
+        font-size: 2.4rem;
+    }
+
+    .photographerCardDesc p:first-child {
+        font-size: 2.8rem;
+    }
+}
+
+@media(min-width: 1600px) {
+    .photographerInfoContainer {
+        grid-template-columns: repeat(4, 1fr);
+        column-gap: 40px;
+    }
+}

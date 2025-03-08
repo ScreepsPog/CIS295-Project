@@ -1,0 +1,156 @@
+* {
+    margin: 0; padding: 0; border: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 62.5%;
+} /* Reset Rule */
+
+body {
+    background-color: #CCC;
+}
+
+body > p:not(.tonofspace) {
+    font-size: 2rem;
+    padding: 16px;
+    background-color: #EEE;
+    margin-top: 20px;
+    margin-left: 5%;
+    max-width: 25%;
+}
+
+.navContainer {
+    background-color: orangered;
+    width: 90%; height: auto;
+    display: flex;
+    margin: 160px auto 0 auto;
+    border-radius: 8px;
+    position: sticky;
+    top: 40px;
+}
+
+.navContainer > a, .navContainer > .navServicesDropdown > p {
+    font-size: 2rem;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    padding: 24px 48px;
+    text-decoration: none;
+    border-right: 1px solid #444;
+    text-transform: uppercase;
+}
+
+.navContainer > a:hover, .navContainer > .navServicesDropdown:hover > p {
+    background-color: #333;
+}
+
+.navServicesExpand {
+    display: none;
+}
+
+.navServicesBrandingExpand {
+    display: none;
+}
+
+.navServicesDropdown:hover .navServicesExpand {
+    position: absolute;
+    left: -1px; top: 101%;
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+}
+
+.navServicesDropdown:hover::after {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid #444;
+}
+
+.navServicesDropdown, .navServicesBrandingDropdown {
+    position: relative;
+}
+
+.navServicesExpand > a, .navServicesExpand > .navServicesBrandingDropdown > p {
+    font-size: 1.6rem;
+    display: block; width: 250px;
+    background-color: #333;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 20px;
+}
+
+.navServicesExpand > a:first-child {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.navServicesExpand > a:hover, .navServicesExpand > .navServicesBrandingDropdown:hover > p {
+    background-color: orangered;
+}
+
+.navServicesExpand > a:not(:last-of-type) {
+    border-bottom: 1px solid #AAA
+}
+
+.navServicesExpand > .navServicesBrandingDropdown > p {
+    border-top: 1px solid #AAA;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.navServicesBrandingDropdown:hover::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: calc(100% - 8px);
+    transform: translateY(-50%);
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-right: 8px solid white;
+}
+
+.navServicesBrandingDropdown:hover .navServicesBrandingExpand {
+    position: absolute;
+    left: 100%; top: 0px;
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+}
+
+.navServicesBrandingExpand > a {
+    font-size: 1.6rem;
+    display: block; width: 250px;
+    background-color: #333;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 20px;
+}
+
+.navServicesBrandingExpand > a:not(:last-of-type) {
+    border-bottom: 1px solid #AAA
+}
+
+.navServicesBrandingExpand > a:hover {
+    background-color: orangered;
+}
+
+.navServicesBrandingExpand > a:first-child {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.navServicesBrandingExpand > a:last-child {
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.tonofspace {
+    margin-top: 4000px;
+    font-size: 1rem;
+}

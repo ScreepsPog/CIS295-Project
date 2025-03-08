@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /styles/
+Disallow: Photography/404error.phtml
+
+Sitemap: https://aaugard.ninetyfive.dev/Photography/sitemap.xml

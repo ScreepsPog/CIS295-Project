@@ -1,0 +1,164 @@
+.coachInfoContainer {
+    width: 60%; height: auto; max-width: 1200px;
+    margin: 20px auto 20px auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.coachInfoCards {
+    box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+    position: relative;
+}
+
+.coachIMG {
+    aspect-ratio: 6/5;
+    position: relative;
+    transition: filter 500ms ease-in-out, border 500ms ease-in-out
+}
+
+.coachIMG > p {
+    position: absolute;
+    bottom: 0px; left: 0px;
+    margin: 8px 16px;
+    padding: 8px;
+    background-color: #0A76DB;
+}
+
+.coachIMG > a {
+    width: 50px; height: 50px;
+    position: absolute;
+    top: 0px; right: 0px;
+    margin: 8px;
+    padding: 8px;
+    border-radius: 12px;
+    background-color: #0A76DB;
+    text-decoration: none;
+    transition: background-color 500ms ease-in-out;
+}
+
+.coachIMG > a:hover {
+    background-color: #5094d4;
+}
+
+.coachIMG > a img {
+    width: 100%; height: 100%;
+    border-radius: 12px;
+}
+
+.coachDesc {
+    height: 250px;
+    overflow: hidden;
+    background-color: #f3f3f3;
+    transition: filter 500ms ease-in-out, border 500ms ease-in-out
+}
+
+.coachDesc > p {
+    padding: 16px;
+    color: black;
+    font-weight: normal;
+    line-height: 1.4;
+}
+
+.coachExperience {
+    display: none;
+}
+
+@media (max-width: 3840px) {
+    .coachIMG > p {
+        font-size: 2rem;
+    }
+    
+    .coachDesc > p {
+        font-size: 2rem;
+    }
+    
+    .coachExperience > p {
+        font-size: 2.4rem;
+    }
+}
+
+@media (max-width: 1920px) {
+    .coachIMG > p {
+        font-size: 2rem;
+    }
+    
+    .coachDesc > p {
+        font-size: 2rem;
+    }
+    
+    .coachExperience > p {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 1440px) { 
+    .coachInfoContainer {
+        width: 80%;
+    }
+    
+    .coachIMG > p {
+        font-size: 2rem;
+    }
+    
+    .coachDesc > p {
+        font-size: 1.8rem;
+    }
+    
+    .coachExperience > p {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 1280px) {
+    .coachIMG > p {
+        font-size: 1.8rem;
+    }
+    
+    .coachDesc > p {
+        font-size: 1.6rem;
+    }
+
+    .coachExperience > p {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    .coachIMG > p {
+        font-size: 1.8rem;
+    }
+    
+    .coachDesc > p {
+        font-size: 1.6rem;
+    }
+
+    .coachExperience > p {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .coachIMG > p {
+        font-size: 1.6rem;
+    }
+    
+    .coachDesc > p {
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .coachInfoContainer {
+        width: 90%;
+        grid-template-columns: 1fr;
+    }
+    
+    .coachIMG > p {
+        font-size: 2.4rem;
+    }
+    
+    .coachDesc > p {
+        font-size: 2rem;
+    }
+}

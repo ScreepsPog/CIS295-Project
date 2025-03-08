@@ -1,0 +1,321 @@
+:root {
+    --ps-header-primary-text-color: #a5a5a5;
+    --ps-header-logo-overlay-color: white;
+    --ps-secondary-color: #fdd04f;
+}
+
+.light-mode {
+    --ps-header-logo-overlay-color: black;
+}
+
+/*
+
+=====================================
+
+                Scroll Bar++++++-
+
+=====================================
+
+*/
+
+::-webkit-scrollbar {
+    width: 15px;
+}
+  
+/* Track */
+::-webkit-scrollbar-track {
+    background: #444; 
+}
+   
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888; 
+    border-radius: 15px;
+}
+  
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #AAA; 
+}
+
+/*
+
+::-webkit-scrollbar-button:single-button {
+    background: #444;
+}
+
+::-webkit-scrollbar-button:single-button:hover {
+    background: #666;
+}
+
+*/
+
+/*
+
+=====================================
+
+        Header Shrink on Scroll
+
+=====================================
+
+*/
+
+.headerContainer.shrink {
+    height: 100px;
+}
+
+.headerContentContainer.shrinkContent {
+    height: 100px;
+}
+
+/*
+
+=====================================
+
+                Header
+
+=====================================
+
+*/
+
+.headerContainer {
+    width: 100%; height: 125px;
+    background-color: rgba(34, 34, 34, .9);
+    position: sticky;
+    top: -1px;
+    z-index: 5;
+    transition: height 300ms ease-in-out;
+}
+
+.headerDesktop {
+    width: 100%; height: 125px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+/*
+
+=====================================
+
+                Logo
+
+=====================================
+
+*/
+
+.logoContainer {
+    width: 100px;
+    margin-left: 50px;
+    max-height: 125px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.logoContainer > a {
+    text-decoration: none;
+    color: var(--ps-header-logo-overlay-color);
+    transition: color 500ms ease-in-out;
+    border-radius: 30px;
+}
+
+.logoContainer > a:hover img {
+    filter: brightness(1.25);
+}
+
+.logoContainer > a > img {
+    width: 100%; height: 100%;
+    transition: filter 150ms ease-in-out;
+    border-radius: 30px;
+}
+
+/*
+
+=====================================
+
+            Navigation
+
+=====================================
+
+*/
+
+.navContainer {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    padding-right: 50px;
+}
+
+.navContainer ul {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    list-style: none;
+}
+
+.navContainer ul li {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    padding: 5px;
+}
+
+.navContainer ul li a {
+    text-decoration: none;
+    font-size: 2rem;
+    color: var(--ps-header-primary-text-color);
+    font-weight: bold;
+    transition: color 150ms ease-in-out;
+}
+
+.navContainer ul li a:hover {
+    color: var(--ps-secondary-color);
+}
+
+@media(max-width: 480px) {
+    .returnHomeButton {
+        display: none;
+    }
+    
+    .headerDesktop {
+        display: none;
+    }
+    
+    .headerContainer {
+        background-color: rgb(34, 34, 34);
+        border-bottom: 2px solid #666;
+        transition: border 500ms ease-in-out;
+    }
+    
+    .headerMobile {
+        width: 100%; height: 100%;
+        display: flex;
+        position: relative;
+    }
+    
+    .navHamburger {
+        position: absolute;
+        top: 47.5px; left: 25px;
+    }
+
+    .logoContainer {
+        width: 100%; height: 125px;
+        margin-left: 0px;
+    }
+    
+    .logoContainer > a > img {
+        max-width: 90px;
+    }
+
+    #button1 {
+        width: 30px; height: 35px;
+        background-color: #ffffff00;
+        overflow: hidden;
+        position: relative;
+    }
+    
+    .navHIcons {
+        width: 30px; height: 5px;
+        background-color: white;
+        position: absolute;
+        transition: all 750ms ease-in-out;
+    }
+    
+    .menuClosed .navIcon1 {
+        top: 0px; left: 0px;
+    }
+    
+    .menuClosed .navIcon2 {
+        top: 12.5px; left: 0px;
+    }
+    
+    .menuClosed .navIcon3 {
+        top: 25px; left: 0px;
+    }
+    
+    .menuClosed .navIcon4 {
+        opacity: 0;
+        transform: rotate(45deg);
+        top: 11px; left: 59px;
+    }
+    
+    .menuClosed .navIcon5 {
+        opacity: 0;
+        transform: rotate(-45deg);
+        top: 11px; left: 59px;
+    }
+    
+    .menuOpened .navIcon1 {
+        top: 0px; left: -90px;
+    }
+    
+    .menuOpened .navIcon2 {
+        top: 12.5px; left: -65px;
+    }
+    
+    .menuOpened .navIcon3 {
+        top: 25px; left: -40px;
+    }
+    
+    .menuOpened .navIcon4 {
+        opacity: 1;
+        top: 11px; left: -1px;
+        transform: rotate(45deg);
+    }
+    
+    .menuOpened .navIcon5 {
+        opacity: 1;
+        top: 11px; left: -1px;
+        transform: rotate(-45deg);
+    }
+
+    .navExpandContainer {
+        position: absolute;
+        top: 125px;
+        display: none;
+        opacity: 0;
+        width: 100%; height: auto;
+        background-color: rgba(34, 34, 34);
+        transition: all 500ms ease-in-out;
+    }
+    
+    .navListContent ul {
+        list-style: none;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+    
+    .navListContent li {
+        width: 100%; height: 75px;
+        border-bottom: 2px solid #a5a5a5;
+    }
+    
+    .navListContent li a {
+        width: 100%; height: 100%;
+        padding-left: 10px;
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: white;
+        font-size: 2.4rem;
+    }
+}
+
+@media(min-width: 481px) {
+    .headerMobile {
+        display: none;
+    }
+}
+
+@media(min-width: 1024px) {
+    .headerMobile {
+        display: none;
+    }
+
+    .navContainer ul {
+        gap: 40px;
+    }
+}

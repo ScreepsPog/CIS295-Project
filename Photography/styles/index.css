@@ -1,0 +1,1004 @@
+* {
+    margin: 0; padding: 0; border: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 62.5%;
+} /* Reset Rule */
+
+:root {
+    --employeer-photo-size: 70px;
+    --employeer-photo-dWidth: 100px;
+    --employeer-photo-dHeight: 100px;
+    --ps-primary-text-color: white;
+    --ps-inverse-primary-text-color: black;
+    --ps-primary-bg-color: #222;
+    --ps-secondary-color: #fdd04f;
+    --ps-overlay-opacity: rgba(34, 34, 34, .5);
+    --ps-theme-color-bg: #444;
+    --ps-theme-color-bg-hover: #666;
+    --ps-theme-color-stroke: white;
+    --ps-active-border-color: white;
+}
+
+.light-mode {
+    --ps-primary-text-color: black;
+    --ps-inverse-primary-text-color: white;
+    --ps-primary-bg-color: white;
+    --ps-theme-color-bg: #444;
+    --ps-theme-color-bg-hover: #666;
+    --ps-theme-color-stroke: white;
+    --ps-active-border-color: black;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--ps-primary-bg-color);
+    color: var(--ps-primary-text-color);
+}
+
+/*
+
+=====================================
+
+                Header
+
+=====================================
+
+*/
+
+/* Can be viewed at styles/header. */
+
+/*
+
+=====================================
+
+        Light/Dark Mode Button
+
+=====================================
+
+*/
+
+#themeToggle {
+    position: fixed;
+    width: 50px; height: 50px;
+    background-color: var(--ps-theme-color-bg);
+    bottom: 25px; right: 25px;
+    border-radius: 45px;
+    cursor: pointer;
+    z-index: 5;
+    transition: background-color 300ms ease-in-out;
+}
+
+#themeToggle:hover {
+    background-color: var(--ps-theme-color-bg-hover);
+}
+
+#themeToggle > svg > path {
+    stroke: var(--ps-theme-color-stroke);
+}
+
+/*
+
+=====================================
+
+            Hero Image
+
+=====================================
+
+*/
+
+.heroImageContainer {
+    width: 100%; height: 600px;
+    /* background-image: url(); */
+}
+
+.heroImageOverlay {
+    width: 100%; height: 100%;
+    background-color: var(--ps-overlay-opacity);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.heroImageContainer h1 {
+    text-align: center;
+    color: white;
+    line-height: 2;
+    font-weight: normal;
+}
+
+.heroImageContainer h2 {
+    font-weight: bold;
+    font-style: italic;
+    color: var(--ps-secondary-color);
+}
+
+/*
+
+=====================================
+
+            Content Header
+
+=====================================
+
+*/
+
+.contentHeaderContainer {
+    width: 70%; height: auto; max-width: 1400px;
+    margin: 24px auto 0 auto;
+}
+
+.contentHeaderContainer > p {
+    padding-top: 12px;
+    padding-left: 24px;
+    line-height: 1.5;
+}
+
+/*
+
+=====================================
+
+                Gallery
+
+=====================================
+
+*/
+
+.galleryContainer {
+    width: 70%; max-width: 1400px;
+    margin: 20px auto 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.galleryBlock {
+    aspect-ratio: 6/5;
+    overflow: hidden;
+}
+
+.galleryBlock a {
+    display: block;
+    width: 100%; height: 100%;
+    border: 2px solid transparent;
+    background-color: rgba(0, 0, 0, 0);
+    transition: border 300ms ease-in-out;
+}
+
+.galleryBlock a:hover img {
+    filter: brightness(.6);
+    transform: scale(1.1)
+}
+
+.galleryBlock a:focus {
+    border: 2px solid var(--ps-active-border-color);
+}
+
+.galleryBlock a > img {
+    width: 100%; height: 100%;
+    transition: filter 300ms ease-in-out, transform 300ms ease-in-out;
+    object-fit: cover;
+}
+
+/*
+
+=====================================
+
+            Employeer Header
+
+=====================================
+
+*/
+
+.employeerHeaderContainer {
+    width: 70%; height: auto; max-width: 1400px;
+    margin: 48px auto 36px auto;
+}
+
+.employeerHeaderOverlay {
+    width: 100%; height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.employeerHeaderOverlay > p {
+    color: var(--ps-primary-text-color);
+}
+
+/*
+
+=====================================
+
+            Employeer Content
+
+=====================================
+
+*/
+
+.employeerContentContainer {
+    width: 70%; height: auto; max-width: 1400px;
+    margin: 36px auto 20px auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.employeerRev {
+    border-radius: 12px;
+    box-shadow: 0px 0px 6px gray;
+}
+
+.employeerRevHeader {
+    width: 100%; height: 80px;
+    margin: 8px;
+    position: relative;
+}
+
+.employeerRevPhoto {
+    position: absolute;
+    top: calc((var(--employeer-photo-dHeight) - var(--employeer-photo-size)) / 2);
+    left: calc((var(--employeer-photo-dWidth) - var(--employeer-photo-size)) / 2);
+    width: var(--employeer-photo-size); height: var(--employeer-photo-size);
+    background-color: white;
+    border-radius: 45px;
+}
+
+.employeerRevName {
+    position: absolute;
+    top: 15px;
+    left: calc(var(--employeer-photo-dWidth) + 2px);
+}
+
+.employeerRevName > p {
+    color: var(--ps-primary-text-color);
+}
+
+.employeerRevScore {
+    position: absolute;
+    overflow: hidden;
+    top: 40px;
+    left: var(--employeer-photo-dWidth);
+}
+
+.employeerRevScore > p {
+    background-clip: text;
+    color: transparent;
+}
+
+.stars5 {
+    background: linear-gradient(90deg, gold 100%, gray 100%);
+}
+
+.stars4-5 {
+    background: linear-gradient(90deg, gold 90%, gray 90%);
+}
+
+.stars4 {
+    background: linear-gradient(90deg, gold 80%, gray 80%);
+}
+
+.employeerRevText {
+    width: 100%; height: auto;
+}
+
+.employeerRevText > p {
+    padding: 8px 24px 12px 24px;
+    line-height: 1.4;
+}
+
+/*
+
+=====================================
+
+                Contact
+
+=====================================
+
+*/
+
+.contactHeaderContainer {
+    width: 100%; height: 350px;
+    margin: 0 auto;
+    background-image: url(../images/contactHeaderHero.jpg);
+    background-size: cover;
+    background-position: center 55%;
+    position: relative;
+}
+
+.contactHeaderOverlay {
+    width: 100%; height: 100%;
+    background-color: var(--ps-overlay-opacity);
+}
+
+.contactHeaderOverlay > h3 {
+    font-weight: normal;
+    white-space: nowrap;
+    color: white;
+    position: absolute;
+    left: 50%; top: 50%;
+    transform: translate(-50%, -50%);
+    filter: brightness(2)
+}
+
+.contactContentContainer {
+    width: 60%; height: auto; max-width: 1400px;
+    margin: 0 auto;
+}
+
+.contactContentContainer > p {
+    color: var(--ps-primary-text-color);
+    text-align: center;
+    line-height: 1.5;
+}
+
+.contactCTAButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 24px 0;
+}
+
+.contactCTAButton > a {
+    padding: 24px;
+    border-radius: 45px;
+    background-color: var(--ps-primary-text-color);
+    color: var(--ps-inverse-primary-text-color);
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 300ms ease-in-out;
+}
+
+.contactCTAButton > a:hover {
+    background-color: var(--ps-secondary-color);
+}
+
+.contactContentBoxesContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: row;
+    margin: 12px auto;
+}
+
+.contactContentBox > p {
+    color: var(--ps-primary-text-color);
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.contactContentBox > ul {
+    color: var(--ps-primary-text-color);
+    list-style: none;
+}
+
+.contactContentBox li {
+    line-height: 1.5;
+}
+
+.contactContentBox a {
+    color: var(--ps-primary-text-color);
+    transition: color 300ms ease-in-out;
+}
+
+.contactContentBox a:hover {
+    color: var(--ps-secondary-color);
+}
+
+/*
+
+=====================================
+
+                Footer
+
+=====================================
+
+*/
+
+/* Can be found at styles/footer.css */
+
+/*
+
+=====================================
+
+                Misc
+
+=====================================
+
+*/
+
+.divider {
+    width: 100%; height: 50px;
+    background-color: var(--ps-secondary-color);
+}
+
+/*
+
+=====================================
+
+        Hero and Gallery Images
+
+=====================================
+
+*/
+
+.hImg, .eImg1, .eImg2, .eImg3 {
+    background-size: cover;
+    background-position: center;
+} 
+
+.hImg {
+    background-image: url(../images/heroImage.jpg);
+}
+
+.eImg1 {
+    background-size: 125%;
+    background-image: url(../images/eImg1.png);
+}
+
+.eImg2 {
+    background-image: url(../images/eImg2.jpg);
+}
+
+.eImg3 {
+    background-image: url(../images/eImg3.png);
+}
+
+/*
+
+=====================================
+
+            Media Queries
+
+=====================================
+
+*/
+
+@media (max-width: 3840px) {
+    .heroImageContainer h1 {
+        font-size: 7.2rem;
+    }
+
+    .heroImageContainer h2 {
+        font-size: 9.6rem;
+    }
+
+    .contentHeaderContainer > h1 {
+        font-size: 4rem;
+    }
+
+    .contentHeaderContainer > p {
+        font-size: 3.2rem;
+    }
+
+    .employeerHeaderOverlay > p {
+        font-size: 7.2rem;
+    }
+
+    .employeerRevName > p {
+        font-size: 2.8rem;
+    }   
+    
+    .employeerRevScore > p {
+        font-size: 3.2rem;
+    }
+
+    .employeerRevText > p {
+        font-size: 2.4rem;
+    }
+
+    .contactHeaderOverlay > h3 {
+        font-size: 12rem;
+    }
+
+    .contactContentContainer > p {
+        font-size: 3.2rem;
+    }
+    
+    .contactContentBox > p {
+        font-size: 2.4rem;
+    }
+
+    .contactContentBox li {
+        font-size: 1.8rem;
+    }
+
+    .contactContentBox a {
+        font-size: 1.8rem;
+    }
+
+    .contactCTAButton > a {
+        font-size: 2.4rem;
+    }
+}
+
+@media (max-width: 1920px) {
+    .heroImageContainer h1 {
+        font-size: 7.2rem;
+    }
+
+    .heroImageContainer h2 {
+        font-size: 9.6rem;
+    }
+
+    .contentHeaderContainer > h1 {
+        font-size: 3.6rem;
+    }
+
+    .contentHeaderContainer > p {
+        font-size: 2.4rem;
+    }
+
+    .employeerHeaderOverlay > p {
+        font-size: 7.2rem;
+    }
+
+    .employeerRevName > p {
+        font-size: 2.8rem;
+    }   
+    
+    .employeerRevScore > p {
+        font-size: 3.2rem;
+    }
+
+    .employeerRevText > p {
+        font-size: 2.4rem;
+    }
+
+    .contactHeaderOverlay > h3 {
+        font-size: 9.6rem;
+    }
+
+    .contactContentContainer > p {
+        font-size: 2.8rem;
+    }
+    
+    .contactContentBox > p {
+        font-size: 2.4rem;
+    }
+
+    .contactContentBox li {
+        font-size: 1.8rem;
+    }
+
+    .contactContentBox a {
+        font-size: 1.8rem;
+    }
+
+    .contactCTAButton > a {
+        font-size: 2.4rem;
+    }
+}
+
+@media (max-width: 1440px) {
+    .heroImageContainer h1 {
+        font-size: 7.2rem;
+    }
+
+    .heroImageContainer h2 {
+        font-size: 9.6rem;
+    }
+
+    .contentHeaderContainer {
+        width: 90%;
+    }
+
+    .contentHeaderContainer > h1 {
+        font-size: 3.6rem;
+    }
+
+    .contentHeaderContainer > p {
+        font-size: 2.4rem;
+    }
+
+    .galleryContainer {
+        width: 90%;
+    }
+
+    .employeerHeaderContainer {
+        width: 90%;
+    }
+
+    .employeerHeaderOverlay > p {
+        font-size: 6rem;
+    }
+
+    .employeerContentContainer {
+        width: 90%;
+    }
+
+    .employeerRevName > p {
+        font-size: 2.8rem;
+    }   
+    
+    .employeerRevScore > p {
+        font-size: 3.2rem;
+    }
+
+    .employeerRevText > p {
+        font-size: 2.2rem;
+    }
+
+    .contactContentContainer {
+        width: 90%;
+    }
+
+    .contactHeaderOverlay > h3 {
+        font-size: 9.6rem;
+    }
+
+    .contactContentContainer > p {
+        font-size: 2.8rem;
+    }
+    
+    .contactContentBox > p {
+        font-size: 2.4rem;
+    }
+
+    .contactContentBox li {
+        font-size: 1.8rem;
+    }
+
+    .contactContentBox a {
+        font-size: 1.8rem;
+    }
+
+    .contactCTAButton > a {
+        font-size: 2.4rem;
+    }
+}
+
+@media (max-width: 1280px) {
+    .heroImageContainer {
+        height: 450px;
+    }
+
+    .heroImageContainer h1 {
+        font-size: 7.2rem;
+    }
+
+    .heroImageContainer h2 {
+        font-size: 9.6rem;
+    }
+
+    .contentHeaderContainer > h1 {
+        font-size: 3.6rem;
+    }
+
+    .contentHeaderContainer > p {
+        font-size: 2.4rem;
+    }
+
+    .employeerHeaderOverlay > p {
+        font-size: 6rem;
+    }
+
+    .employeerRevName > p {
+        font-size: 2.4rem;
+    }   
+    
+    .employeerRevScore > p {
+        font-size: 3.2rem;
+    }
+
+    .employeerRevText > p {
+        font-size: 2.2rem;
+    }
+
+    .contactHeaderOverlay > h3 {
+        font-size: 9.6rem;
+    }
+
+    .contactContentContainer > p {
+        font-size: 2.4rem;
+    }
+    
+    .contactContentBox > p {
+        font-size: 2.4rem;
+    }
+
+    .contactContentBox li {
+        font-size: 1.8rem;
+    }
+
+    .contactContentBox a {
+        font-size: 1.8rem;
+    }
+
+    .contactCTAButton > a {
+        font-size: 2.4rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    .heroImageContainer {
+        height: 350px;
+    }
+
+    .heroImageContainer h1 {
+        font-size: 6rem;
+    }
+
+    .heroImageContainer h2 {
+        font-size: 7.2rem;
+    }
+
+    .contentHeaderContainer > h1 {
+        font-size: 3.2rem;
+    }
+
+    .contentHeaderContainer > p {
+        font-size: 2.2rem;
+    }
+
+    .employeerHeaderOverlay > p {
+        font-size: 5.4rem;
+    }
+
+    .employeerRevName > p {
+        font-size: 2.2rem;
+    }   
+    
+    .employeerRevScore > p {
+        font-size: 2.8rem;
+    }
+
+    .employeerRevText > p {
+        font-size: 1.8rem;
+    }
+
+    .contactHeaderOverlay > h3 {
+        font-size: 7.2rem;
+    }
+
+    .contactContentContainer > p {
+        font-size: 2.2rem;
+    }
+    
+    .contactContentBox > p {
+        font-size: 2.2rem;
+    }
+
+    .contactContentBox li {
+        font-size: 1.6rem;
+    }
+
+    .contactContentBox a {
+        font-size: 1.6rem;
+    }
+
+    .contactCTAButton > a {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .heroImageContainer h1 {
+        font-size: 6rem;
+    }
+
+    .heroImageContainer h2 {
+        font-size: 7.2rem;
+    }
+
+    .contentHeaderContainer > h1 {
+        font-size: 2.8rem;
+    }
+
+    .contentHeaderContainer > p {
+        font-size: 2rem;
+    }
+        
+    .galleryContainer {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .employeerContentContainer {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .employeerRev:nth-child(3) {
+        grid-column: span 2;
+        justify-self: center;
+        width: 50%;
+    }
+
+    .employeerHeaderOverlay > p {
+        font-size: 5.4rem;
+    }
+
+    .employeerRevName > p {
+        font-size: 2.2rem;
+    }   
+    
+    .employeerRevScore > p {
+        font-size: 2.8rem;
+    }
+
+    .employeerRevText > p {
+        font-size: 1.8rem;
+    }
+
+    .contactHeaderOverlay > h3 {
+        font-size: 6rem;
+    }
+
+    .contactContentContainer > p {
+        font-size: 2rem;
+    }
+    
+    .contactContentBox > p {
+        font-size: 2rem;
+    }
+
+    .contactContentBox li {
+        font-size: 1.6rem;
+    }
+
+    .contactContentBox a {
+        font-size: 1.6rem;
+    }
+
+    .contactCTAButton > a {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .heroImageContainer h1 {
+        font-size: 4rem;
+    }
+
+    .heroImageContainer h2 {
+        font-size: 4.8rem;
+    }
+
+    .contentHeaderContainer > h1 {
+        font-size: 2.8rem;
+    }
+
+    .contentHeaderContainer > p {
+        font-size: 2rem;
+        line-height: 1.8;
+    }
+
+    .galleryContainer {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .employeerContentContainer {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .employeerRev:nth-child(3) {
+        grid-column: span 1;
+        justify-self: center;
+        width: 100%;
+    }
+
+    .employeerHeaderOverlay > p {
+        font-size: 3.2rem;
+    }
+
+    .employeerRevName > p {
+        font-size: 2.2rem;
+    }   
+    
+    .employeerRevScore > p {
+        font-size: 2.8rem;
+    }
+
+    .employeerRevText > p {
+        font-size: 1.8rem;
+    }
+
+    .contactHeaderContainer {
+        height: 200px;
+    }
+
+    .contactHeaderOverlay > h3 {
+        font-size: 3.2rem;
+    }
+
+    .contactContentBoxesContainer {
+        align-items: start;
+        justify-content: center;
+        flex-direction: row;
+        margin: 24px auto;
+    }
+    
+    .contactContentContainer > p {
+        font-size: 1.8rem;
+    }
+    
+    .contactContentBox > p {
+        font-size: 1.8rem;
+    }
+
+    .contactContentBox li {
+        font-size: 1.6rem;
+    }
+
+    .contactContentBox a {
+        font-size: 1.6rem;
+    }
+
+    .contactCTAButton > a {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 350px) {
+    .heroImageContainer h1 {
+        font-size: 3.6rem;
+    }
+
+    .heroImageContainer h2 {
+        font-size: 4.4rem;
+    }
+
+    .contentHeaderContainer > h1 {
+        font-size: 2.4rem;
+    }
+
+    .contentHeaderContainer > p {
+        font-size: 1.8rem;
+        line-height: 1.8;
+    }
+
+    .employeerHeaderOverlay > p {
+        font-size: 2.8rem;
+    }
+
+    .employeerRevName > p {
+        font-size: 2.2rem;
+    }   
+    
+    .employeerRevScore > p {
+        font-size: 2.8rem;
+    }
+
+    .employeerRevText > p {
+        font-size: 1.8rem;
+    }
+
+    .contactHeaderContainer {
+        height: 200px;
+    }
+
+    .contactHeaderOverlay > h3 {
+        font-size: 2.4rem;
+    }
+
+    .contactContentBoxesContainer {
+        align-items: start;
+        justify-content: center;
+        flex-direction: column;
+        gap: 12px;
+        margin: 24px auto;
+    }
+    
+    .contactContentContainer > p {
+        font-size: 1.6rem;
+    }
+    
+    .contactContentBox > p {
+        font-size: 1.6rem;
+    }
+
+    .contactContentBox li {
+        font-size: 1.4rem;
+    }
+
+    .contactContentBox a {
+        font-size: 1.4rem;
+    }
+
+    .contactCTAButton > a {
+        font-size: 1.8rem;
+    }
+}

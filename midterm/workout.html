@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Midterm Part 2 - Austin Augard</title>
+        <style>
+            * {
+                margin: 0; padding: 0; border: 0;
+                box-sizing: border-box;
+                font-size: 62.5%;
+            } /* Reset Rule */
+
+            .navContainer {
+                width: 100%; height: 50px;
+                background-color: #FFF;
+                box-shadow: 2px 0px 2px rgba(0, 0, 0, .5);
+                position: sticky;
+                top: 0px;
+            }
+
+            .navContent {
+                width: 100%; height: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                flex-direction: row;
+            }
+
+            .navHamburger {
+                width: 50px; height: 100%;
+                margin-left: 5px;
+                overflow: hidden;
+                position: relative;
+            }
+
+            .navHamburger:hover {
+                cursor: pointer;
+            }
+
+            .navHIcons {
+                width: 30px; height: 4px;
+                background-color: black;
+                border-radius: 45px;
+                position: absolute;
+                left: 10px;
+            }
+
+            .navIcon1 {
+                top: 12.5px;
+            }
+
+            .navIcon2 {
+                top: 22.5px;
+            }
+
+            .navIcon3 {
+                top: 32.5px;
+            }
+
+            .navHeading {
+                display: inline-flex;
+                align-items: center;
+                font-size: 4.4rem;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+            }
+
+            .navHeading::after {
+                content: "!";
+                font-size: 3.6rem;
+                font-weight: bold;
+                color: red;
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            }
+
+            .navSearch {
+                width: 50px; height: 100%;
+                margin-right: 5px;
+                position: relative;
+            }
+
+            .navSearch:hover {
+                cursor: pointer;
+            }
+
+            .navSearchIcon {
+                width: 25px; height: 25px;
+                border: 3px solid black;
+                border-radius: 50%;
+                position: absolute;
+                top: 10px; left: 10px;
+            }
+
+            .navSearchIcon::after {
+                width: 12.5px; height: 3px;
+                content: "";
+                background-color: black;
+                position: absolute;
+                top: 22.5px;
+                left: 15px;
+                transform: rotate(45deg);
+            }
+
+            .bodyContainer {
+                width: 60%; height: auto;
+                margin: 0 auto;
+                counter-reset: headerCount;
+            }
+
+            .bodyContainer h2 {
+                width: 85%; height: 100%;
+                margin: 24px auto;
+                font-size: 3.6rem;
+                color: #222;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+            }
+
+            .bodyContainer h2::before {
+                counter-increment: headerCount;
+                color: red;
+                content: counter(headerCount) ". ";
+            }
+
+            .bodyContainer h2:not(:first-child) {
+                margin-top: 60px;
+                padding-top: 60px;
+                border-top: 4px dotted rgba(0, 0, 0, .5);
+            }
+
+            .articleImage1 {
+                width: 85%; height: 100%;
+                margin: 0 auto;
+                overflow: hidden;
+            }
+            
+            .articleImage1 img {
+                width: 100%; height: 100%;
+            }
+
+            .articleImageSource {
+                width: 85%; height: 100%;
+                margin: 20px auto;
+            }
+
+            .articleImageSource p {
+               font-size: 1.8rem;
+               letter-spacing: 1px;
+               color: rgba(0, 0, 0, .5);
+            }
+
+            .articleWhy1 {
+                width: 85%; height: 100%;
+                margin: 24px auto 12px auto;
+                font-family: 'Times New Roman', Times, serif;
+            }
+
+            .articleWhy1 span {
+                font-size: 2.6rem;
+                font-weight: bold;
+            }
+
+            .articleWhy1 p {
+                font-size: 2.4rem;
+            }
+
+            .articleHowTo1 {
+                width: 85%; height: 100%;
+                margin: 20px auto;
+            }
+
+            .articleHowTo1 h3 {
+                font-size: 2.6rem;
+                margin-bottom: 20px;
+            }
+
+            .articleHowTo1 ol {
+                margin-left: 50px;
+            }
+
+            .articleHowTo1 ol li {
+                font-size: 2.2rem;
+                padding-left: 4px;
+                line-height: 1.4;
+            }
+
+        </style>
+    </head>
+    <body>
+        <header class="navContainer">
+            <nav class="navContent">
+                <div class="navHamburger">
+                    <div class="navHIcons navIcon1"></div>
+                    <div class="navHIcons navIcon2"></div>
+                    <div class="navHIcons navIcon3"></div>
+                </div>
+                <div class="navHeading"><h1>Eat This, Not That</h1></div>
+                <div class="navSearch">
+                    <div class="navSearchIcon"></div>
+                </div>
+            </nav>
+        </header>
+        <article class="bodyContainer">
+            <h2>Bulgarian Split Squat</h2>
+            <div class="articleImage1">
+                <img src="squat.jpg" alt="">
+            </div>
+            <div class="articleImageSource">
+                <p>Pexels</p>
+            </div>
+            <div class="articleWhy1">
+                <p><span>Why:</span> Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium iure dolores nobis aliquid, odit ut. Reprehenderit aperiam ab, repellendus et sed maxime laborum quaerat nisi, autem voluptates delectus sequi incidunt.</p>
+            </div>
+            <div class="articleHowTo1">
+                <h3>How to:</h3>
+                <ol>
+                    <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi, omnis qui cum officia numquam totam.</li>
+                    <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta, atque labore eius.</li>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, neque soluta mollitia dolor, aspernatur rem facilis.</li>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus natus, explicabo debitis, perferendis.</li>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam quaerat corrupti.</li>
+                </ol>
+            </div>
+            <h2>Bulgarian Split Squat</h2>
+            <div class="articleImage1">
+                <img src="squat.jpg" alt="">
+            </div>
+            <div class="articleImageSource">
+                <p>Pexels</p>
+            </div>
+            <div class="articleWhy1">
+                <p><span>Why:</span> Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium iure dolores nobis aliquid, odit ut. Reprehenderit aperiam ab, repellendus et sed maxime laborum quaerat nisi, autem voluptates delectus sequi incidunt.</p>
+            </div>
+            <div class="articleHowTo1">
+                <h3>How to:</h3>
+                <ol>
+                    <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi, omnis qui cum officia numquam totam.</li>
+                    <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta, atque labore eius.</li>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, neque soluta mollitia dolor, aspernatur rem facilis.</li>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus natus, explicabo debitis, perferendis.</li>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam quaerat corrupti.</li>
+                </ol>
+            </div>
+            <h2>Bulgarian Split Squat</h2>
+            <div class="articleImage1">
+                <img src="squat.jpg" alt="">
+            </div>
+            <div class="articleImageSource">
+                <p>Pexels</p>
+            </div>
+            <div class="articleWhy1">
+                <p><span>Why:</span> Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium iure dolores nobis aliquid, odit ut. Reprehenderit aperiam ab, repellendus et sed maxime laborum quaerat nisi, autem voluptates delectus sequi incidunt.</p>
+            </div>
+            <div class="articleHowTo1">
+                <h3>How to:</h3>
+                <ol>
+                    <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi, omnis qui cum officia numquam totam.</li>
+                    <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta, atque labore eius.</li>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, neque soluta mollitia dolor, aspernatur rem facilis.</li>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus natus, explicabo debitis, perferendis.</li>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam quaerat corrupti.</li>
+                </ol>
+            </div>
+            <h2>Bulgarian Split Squat</h2>
+            <div class="articleImage1">
+                <img src="squat.jpg" alt="">
+            </div>
+            <div class="articleImageSource">
+                <p>Pexels</p>
+            </div>
+            <div class="articleWhy1">
+                <p><span>Why:</span> Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium iure dolores nobis aliquid, odit ut. Reprehenderit aperiam ab, repellendus et sed maxime laborum quaerat nisi, autem voluptates delectus sequi incidunt.</p>
+            </div>
+            <div class="articleHowTo1">
+                <h3>How to:</h3>
+                <ol>
+                    <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi, omnis qui cum officia numquam totam.</li>
+                    <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta, atque labore eius.</li>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, neque soluta mollitia dolor, aspernatur rem facilis.</li>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus natus, explicabo debitis, perferendis.</li>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam quaerat corrupti.</li>
+                </ol>
+            </div>
+            <h2>Bulgarian Split Squat</h2>
+            <div class="articleImage1">
+                <img src="squat.jpg" alt="">
+            </div>
+            <div class="articleImageSource">
+                <p>Pexels</p>
+            </div>
+            <div class="articleWhy1">
+                <p><span>Why:</span> Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium iure dolores nobis aliquid, odit ut. Reprehenderit aperiam ab, repellendus et sed maxime laborum quaerat nisi, autem voluptates delectus sequi incidunt.</p>
+            </div>
+            <div class="articleHowTo1">
+                <h3>How to:</h3>
+                <ol>
+                    <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi, omnis qui cum officia numquam totam.</li>
+                    <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta, atque labore eius.</li>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, neque soluta mollitia dolor, aspernatur rem facilis.</li>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus natus, explicabo debitis, perferendis.</li>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam quaerat corrupti.</li>
+                </ol>
+            </div>
+            <h2>Bulgarian Split Squat</h2>
+            <div class="articleImage1">
+                <img src="squat.jpg" alt="">
+            </div>
+            <div class="articleImageSource">
+                <p>Pexels</p>
+            </div>
+            <div class="articleWhy1">
+                <p><span>Why:</span> Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium iure dolores nobis aliquid, odit ut. Reprehenderit aperiam ab, repellendus et sed maxime laborum quaerat nisi, autem voluptates delectus sequi incidunt.</p>
+            </div>
+            <div class="articleHowTo1">
+                <h3>How to:</h3>
+                <ol>
+                    <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi, omnis qui cum officia numquam totam.</li>
+                    <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta, atque labore eius.</li>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, neque soluta mollitia dolor, aspernatur rem facilis.</li>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus natus, explicabo debitis, perferendis.</li>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam quaerat corrupti.</li>
+                </ol>
+            </div>
+        </article>
+    </body>
+</html>

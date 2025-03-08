@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /styles/
+Disallow: Fitness/404error.php
+
+Sitemap: https://aaugard.ninetyfive.dev/Fitness/sitemap.xml
