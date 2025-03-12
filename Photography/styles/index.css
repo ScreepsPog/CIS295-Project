@@ -37,6 +37,7 @@ html {
 body {
     background-color: var(--ps-primary-bg-color);
     color: var(--ps-primary-text-color);
+    transition: color 300ms ease-in-out, background-color 300ms ease-in-out;
 }
 
 /*
@@ -382,7 +383,6 @@ body {
 
 .contactContentBox a {
     color: var(--ps-primary-text-color);
-    transition: color 300ms ease-in-out;
 }
 
 .contactContentBox a:hover {

@@ -15,6 +15,7 @@
     padding: 40px 0 20px 0;
     color: var(--ps-footer-primary-text-color);
     background-color: var(--ps-footer-background-color);
+    transition: color 300ms ease-in-out, background-color 300ms ease-in-out;
 }
 
 .footerContentContainer {
@@ -65,7 +66,6 @@
 .footerTopBox > .footerBackTop > p > a {
     font-size: 2rem;
     text-decoration: none;
-    transition: color 300ms ease-in-out;
 }
 
 .footerTopBox > .footerBackTop > p > a:hover {
