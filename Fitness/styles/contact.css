@@ -91,14 +91,18 @@ body {
 .divider {
     width: 100%; height: 50px;
     margin: 24px 0;
-    background-color: #60aef8;
+    background-color: #0A76DB;
 }
 
 .footerContainer > p > a {
     font-size: 2rem;
 }
 
-@media (min-width: 2560px) {
+@media (max-width: 3840px) {
+    .contactImgContainer > a > p {
+        font-size: 8rem;
+    }
+
     .contactHeaderContainer h1 {
         font-size: 3rem;
     }
@@ -121,6 +125,10 @@ body {
 }
 
 @media (max-width: 1920px) {
+    .contactImgContainer > a > p {
+        font-size: 8rem;
+    }
+
     .contactHeaderContainer h1 {
         font-size: 2.4rem;
     }
@@ -133,19 +141,109 @@ body {
         font-size: 2.4rem;
     }
 
+    .contactGITBox li {
+        font-size: 1.8rem;
+    }
+
     .contactGITBox a {
         font-size: 1.8rem;
     }
 }
 
 @media (max-width: 1440px) {
+    .contactImgContainer > a > p {
+        font-size: 6rem;
+    }
+    
+    .contactHeaderContainer h1 {
+        font-size: 2.4rem;
+    }
 
+    .contactHeaderContainer p {
+        font-size: 2rem;
+    }
+
+    .contactGITBox h1 {
+        font-size: 2.4rem;
+    }
+
+    .contactGITBox li {
+        font-size: 1.8rem;
+    }
+
+    .contactGITBox a {
+        font-size: 1.8rem;
+    }
 }
 
 @media (max-width: 1280px) {
+    .contactImgContainer > a > p {
+        font-size: 6rem;
+    }
+    
+    .contactHeaderContainer h1 {
+        font-size: 2.4rem;
+    }
 
+    .contactHeaderContainer p {
+        font-size: 2rem;
+    }
+
+    .contactGITBox h1 {
+        font-size: 2.2rem;
+    }
+
+    .contactGITBox li {
+        font-size: 1.6rem;
+    }
+
+    .contactGITBox a {
+        font-size: 1.6rem;
+    }
 }
 
 @media (max-width: 480px) {
+    .contactContainer {
+        width: 100%; height: auto;
+        margin: 30px auto 0 auto;
+    }
 
+    .contactImgContainer {
+        width: 90%;
+    }
+
+    .contactImgContainer > a > p {
+        font-size: 4.8rem;
+        white-space: nowrap;
+    }
+
+    .contactHeaderContainer {
+        width: 80%;
+    }
+    
+    .contactHeaderContainer h1 {
+        font-size: 2.4rem;
+    }
+
+    .contactHeaderContainer p {
+        font-size: 2rem;
+    }
+
+    .contactGITBoxContainer {
+        width: 80%;
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .contactGITBox h1 {
+        font-size: 2.2rem;
+    }
+
+    .contactGITBox li {
+        font-size: 1.6rem;
+    }
+
+    .contactGITBox a {
+        font-size: 1.6rem;
+    }
 }

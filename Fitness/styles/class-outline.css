@@ -80,17 +80,22 @@ body {
 .divider {
     width: 100%; height: 50px;
     margin: 24px 0;
-    background-color: #60aef8;
+    background-color: #0A76DB;
 }
 
 .footerContainer > p > a {
     font-size: 2rem;
 }
 
-@media (min-width: 2560px) {
+@media (max-width: 3840px) {
+    .classImgContainer > a > p {
+        font-size: 8rem;
+    }
+
     .classHeaderContainer h1 {
         font-size: 2.8rem;
     }
+
     .classHeaderContainer p {
         font-size: 2.4rem;
     }
@@ -109,9 +114,14 @@ body {
 }
 
 @media (max-width: 1920px) {
+    .classImgContainer > a > p {
+        font-size: 7.2rem;
+    }
+
     .classHeaderContainer h1 {
         font-size: 2.4rem;
     }
+
     .classHeaderContainer p {
         font-size: 2rem;
     }
@@ -130,13 +140,98 @@ body {
 }
 
 @media (max-width: 1440px) {
+    .classImgContainer > a > p {
+        font-size: 6rem;
+    }
 
+    .classHeaderContainer h1 {
+        font-size: 2.4rem;
+    }
+
+    .classHeaderContainer p {
+        font-size: 2rem;
+    }
+
+    .classContentBox h1 {
+        font-size: 2rem;
+    }
+
+    .classContentBox p {
+        font-size: 1.6rem;
+    }
+
+    .classContentBox li {
+        font-size: 1.4rem;
+    }
 }
 
 @media (max-width: 1280px) {
+    .classImgContainer > a > p {
+        font-size: 6rem;
+        white-space: wrap;
+    }
 
+    .classHeaderContainer h1 {
+        font-size: 2.4rem;
+    }
+
+    .classHeaderContainer p {
+        font-size: 2rem;
+    }
+
+    .classContentBox h1 {
+        font-size: 2rem;
+    }
+
+    .classContentBox p {
+        font-size: 1.6rem;
+    }
+
+    .classContentBox li {
+        font-size: 1.4rem;
+    }
 }
 
 @media (max-width: 480px) {
+    .classOutlineContainer {
+        margin: 30px 0 auto 0;
+    }
+    
+    .classImgContainer {
+        width: 90%;
+    }
+    
+    .classImgContainer > a > p {
+        font-size: 6rem;
+        white-space: wrap;
+    }
 
+    .classHeaderContainer {
+        width: 80%;
+    }
+
+    .classHeaderContainer h1 {
+        font-size: 2.4rem;
+    }
+
+    .classHeaderContainer p {
+        font-size: 2rem;
+    }
+
+    .classContentBoxContainer {
+        width: 80%;
+        grid-template-columns: 1fr;
+    }
+
+    .classContentBox h1 {
+        font-size: 2rem;
+    }
+
+    .classContentBox p {
+        font-size: 1.6rem;
+    }
+
+    .classContentBox li {
+        font-size: 1.4rem;
+    }
 }

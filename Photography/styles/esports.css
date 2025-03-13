@@ -19,13 +19,17 @@ body {
     margin: 0 auto;
 }
 
+.headerContentContainer h1 {
+    padding-bottom: 20px;
+}
+
 .headerContentContainer p {
     padding-left: 20px;
 }
 
 .esportsContentContainer {
     width: 70%;
-    margin: 20px auto 0 auto;
+    margin: 20px auto;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
@@ -49,7 +53,7 @@ body {
     font-size: 2rem;
 }
 
-@media (min-width: 2560px) {
+@media (max-width: 3840px) {
     .headerContentContainer h1 {
         font-size: 3rem;
     }
@@ -72,13 +76,76 @@ body {
 }
 
 @media (max-width: 1440px) {
+    .headerContentContainer {
+        width: 80%;
+    }
 
+    .headerContentContainer h1 {
+        font-size: 2.4rem;
+    }
+
+    .headerContentContainer p {
+        font-size: 2rem;
+    }
+
+    .esportsContentContainer {
+        width: 90%;
+    }
 }
 
 @media (max-width: 1280px) {
+    .headerContentContainer h1 {
+        font-size: 2.2rem;
+    }
 
+    .headerContentContainer p {
+        font-size: 1.8rem;
+    }
 }
 
-@media (max-width: 480px) {
 
+@media (max-width: 800px) {
+    .headerContentContainer h1 {
+        font-size: 2.2rem;
+    }
+
+    .headerContentContainer p {
+        font-size: 1.8rem;
+    }
+
+    .esportsContentContainer {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto auto;
+    }
+
+    .esportsBox:nth-child(3) {
+        grid-column: 1 / 3;
+        justify-self: center;
+        width: 50%;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .headerContentContainer {
+        margin: 20px auto;
+    }
+
+    .headerContentContainer h1 {
+        font-size: 2.2rem;
+    }
+
+    .headerContentContainer p {
+        font-size: 1.8rem;
+    }
+
+    .esportsContentContainer {
+        width: 80%;
+        grid-template-columns: 1fr;
+    }
+
+    .esportsBox:nth-child(3) {
+        grid-column: 1;
+        width: 100%;
+    }
 }

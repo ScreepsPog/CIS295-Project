@@ -6,9 +6,6 @@
         <link rel="stylesheet" href="styles/coaches.css">
     </head>
     <body>
-        <div class="returnHomeButton">
-            <a href="../index.html"><img src="../images/home.png" alt=""></a>
-        </div>
         <div class="bodyContainer" id="top">
             <?php include 'inc/header.inc'; ?>
             <div class="coachMeetContainer">
