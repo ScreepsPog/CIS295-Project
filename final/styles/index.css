@@ -1,0 +1,331 @@
+* {
+    margin: 0; padding: 0; border: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    /* font-size: 62.5%; */
+} /* Reset Rule */
+
+body {
+    background-color: #DDDDDD;
+}
+
+.bodyContainer {
+    max-width: 1920px;
+    margin: 0 auto;
+}
+
+.navContainer {
+    width: 100%; height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1px;
+}
+
+.navContainer > ul {
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+}
+
+.navItemBox {
+    width: 60%;
+    gap: 2px;
+}
+
+.navLogoBox, .navSocialBox {
+    width: 20%;
+}
+
+.navContainer > ul > li {
+    flex-grow: 1;
+}
+
+.navContainer > ul > li > a {
+    width: 100%; height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    transition: background-color 300ms ease-in-out;
+}
+
+.navContainer .navLogo {
+    font-size: 1.6em;
+    background-color: #ffa500;
+    text-transform: uppercase;
+}
+
+.navContainer .navItem {
+    flex-grow: 1;
+    background-color: blue;
+    text-transform: lowercase;
+    position: relative;
+    transition: background-color 300ms ease-in-out;
+}
+
+.navContainer .navItem:hover {
+    background-color: rgb(52, 52, 255);
+}
+
+
+.navContainer .navSocial {
+    background-color: yellow;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navContainer .navSocial > a > img {
+    height: 75%;
+}
+
+.navDropdownExpand {
+    position: absolute;
+    width: 100%;
+    left: 0; top: 101%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 300ms ease-in-out, visibility 300ms ease-in-out;
+}
+
+.navItem:hover > .navDropdownExpand {
+    opacity: 1;
+    visibility: visible;
+}
+
+.navDropdownExpand > a {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: white;
+    background-color: rgba(0, 0, 0, .3);
+    border: 1px solid yellow;
+    padding: 16px 0;
+    transition: background-color 300ms ease-in-out;
+}
+
+.navDropdownExpand > a:hover {
+    background-color: rgba(0, 0, 0, .5);
+}
+
+.heroContainer {
+    width: 100%; height: 300px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 12px 0;
+    background-color: #008000;
+}
+
+.heroContainer > .heroBox {
+    width: 100%; height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.heroBoxID1 {
+    background-image: url(../images/chess1.jpg);
+}
+
+.heroBoxID2 {
+    background-image: url(../images/chess2.jpg);
+}
+
+.blogPostContainer {
+    background-color: grey;
+    width: 100%;
+    margin: 12px 0;
+}
+
+.blogPostContainer > h2 {
+    text-align: center;
+    padding: 8px 0;
+}
+
+.blogPostContainer > .blogPostBoxContainer {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 8px;
+    padding: 8px;
+}
+
+.blogPostBoxContainer > .blogPostBoxes {
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffcc;
+}
+
+.blogPostBoxes > p {
+    font-size: 4rem;
+    font-weight: bold;
+    color: black;
+    opacity: .3;
+}
+
+.galleryContainer {
+    background-color: grey;
+    width: 100%;
+    margin: 8px 0;
+}
+
+.galleryContainer > h2 {
+    text-align: center;
+    padding: 8px 0;
+}
+
+.galleryContainer > .galleryBoxContainer {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 8px;
+    padding: 8px;
+}
+
+.galleryBoxContainer > .galleryBoxes {
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffccff;
+}
+
+.galleryBoxes > p {
+    font-size: 4rem;
+    font-weight: bold;
+    color: black;
+    opacity: .3;
+}
+
+@media (min-width: 1441px) {
+    .blogPostBoxes:nth-child(6), .galleryBoxes:nth-child(11), .galleryBoxes:nth-child(12) {
+        display: none;
+    }
+
+    .blogPostContainer > .blogPostBoxContainer {
+        grid-template-columns: repeat(5, 1fr);
+    }
+    
+    .galleryContainer > .galleryBoxContainer {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+@media (min-width: 1025px ) and (max-width: 1440px) {
+    .blogPostBoxes:nth-child(5), .blogPostBoxes:nth-child(6) {
+        display: none;
+    }
+
+    .galleryBoxes:nth-child(11), .galleryBoxes:nth-child(12) {
+        display: default;
+    }
+
+    .blogPostContainer > .blogPostBoxContainer {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .galleryContainer > .galleryBoxContainer {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 1024px) {
+    .heroBoxID2 {
+        display: none;
+    }
+
+    .navContainer {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 0px;
+    }
+
+    .navItemBox {
+        width: 75%;
+        z-index: 5;
+    }
+    
+    .navSocialBox {
+        width: 25%;
+        z-index: 5;
+    }
+    
+    .navLogoBox {
+        width: 100%;
+    }
+
+    .galleryBoxes:nth-child(10), .galleryBoxes:nth-child(11), .galleryBoxes:nth-child(12) {
+        display: none;
+    }
+
+    .blogPostContainer > .blogPostBoxContainer {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .galleryContainer > .galleryBoxContainer {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .navContainer {
+        position: relative;
+    }
+    
+    .navContainer .navItem {
+        position: initial;
+    }
+    
+    .navDropdownExpand {
+        width: 100vw;
+    }
+    
+    .galleryBoxes:nth-child(9), .galleryBoxes:nth-child(10), .galleryBoxes:nth-child(11), .galleryBoxes:nth-child(12) {
+        display: none;
+    }
+
+    .blogPostContainer > .blogPostBoxContainer {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .galleryContainer > .galleryBoxContainer {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .navContainer {
+        flex-direction: column;
+    }
+
+    .navItemBox {
+        width: 100%;
+    }
+    
+    .navLogoBox, .navSocialBox {
+        width: 100%;
+    }
+
+    .blogPostContainer > .blogPostBoxContainer {
+        grid-template-columns: 1fr;
+    }
+
+    .blogPostBoxes:nth-child(5), .blogPostBoxes:nth-child(6), .galleryBoxes:nth-child(7), .galleryBoxes:nth-child(8), .galleryBoxes:nth-child(9), .galleryBoxes:nth-child(10), .galleryBoxes:nth-child(11), .galleryBoxes:nth-child(12) {
+        display: none
+    }
+    
+    .galleryContainer > .galleryBoxContainer {
+        grid-template-columns: 1fr;
+    }
+}
